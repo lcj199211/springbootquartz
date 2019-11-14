@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quartz.dao.TournamentCategoryMapper">
+  <resultMap id="BaseResultMap" type="com.quartz.model.TournamentCategory">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="cn_name" jdbcType="VARCHAR" property="cnName" />
+    <result column="continent" jdbcType="VARCHAR" property="continent" />
+    <result column="sport_id" jdbcType="INTEGER" property="sportId" />
+    <result column="pic_url" jdbcType="VARCHAR" property="picUrl" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    id, cn_name, continent, sport_id, pic_url
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from tournament_category
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    delete from tournament_category
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.quartz.model.TournamentCategory">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    insert into tournament_category (id, cn_name, continent, 
+      sport_id, pic_url)
+    values (#{id,jdbcType=INTEGER}, #{cnName,jdbcType=VARCHAR}, #{continent,jdbcType=VARCHAR}, 
+      #{sportId,jdbcType=INTEGER}, #{picUrl,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.quartz.model.TournamentCategory">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    insert into tournament_category
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="cnName != null">
+        cn_name,
+      </if>
+      <if test="continent != null">
+        continent,
+      </if>
+      <if test="sportId != null">
+        sport_id,
+      </if>
+      <if test="picUrl != null">
+        pic_url,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="cnName != null">
+        #{cnName,jdbcType=VARCHAR},
+      </if>
+      <if test="continent != null">
+        #{continent,jdbcType=VARCHAR},
+      </if>
+      <if test="sportId != null">
+        #{sportId,jdbcType=INTEGER},
+      </if>
+      <if test="picUrl != null">
+        #{picUrl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.quartz.model.TournamentCategory">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    update tournament_category
+    <set>
+      <if test="cnName != null">
+        cn_name = #{cnName,jdbcType=VARCHAR},
+      </if>
+      <if test="continent != null">
+        continent = #{continent,jdbcType=VARCHAR},
+      </if>
+      <if test="sportId != null">
+        sport_id = #{sportId,jdbcType=INTEGER},
+      </if>
+      <if test="picUrl != null">
+        pic_url = #{picUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.quartz.model.TournamentCategory">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    update tournament_category
+    set cn_name = #{cnName,jdbcType=VARCHAR},
+      continent = #{continent,jdbcType=VARCHAR},
+      sport_id = #{sportId,jdbcType=INTEGER},
+      pic_url = #{picUrl,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

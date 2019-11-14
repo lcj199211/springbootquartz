@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quartz.dao.StadiumsCountrysMapper">
+  <resultMap id="BaseResultMap" type="com.quartz.model.StadiumsCountrys">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="cn_name" jdbcType="VARCHAR" property="cnName" />
+    <result column="en_name" jdbcType="VARCHAR" property="enName" />
+    <result column="fifa" jdbcType="VARCHAR" property="fifa" />
+    <result column="ioc" jdbcType="VARCHAR" property="ioc" />
+    <result column="continent" jdbcType="VARCHAR" property="continent" />
+    <result column="picUrl" jdbcType="VARCHAR" property="picurl" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    id, cn_name, en_name, fifa, ioc, continent, picUrl
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from stadiums_countrys
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    delete from stadiums_countrys
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.quartz.model.StadiumsCountrys">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    insert into stadiums_countrys (id, cn_name, en_name, 
+      fifa, ioc, continent, 
+      picUrl)
+    values (#{id,jdbcType=INTEGER}, #{cnName,jdbcType=VARCHAR}, #{enName,jdbcType=VARCHAR}, 
+      #{fifa,jdbcType=VARCHAR}, #{ioc,jdbcType=VARCHAR}, #{continent,jdbcType=VARCHAR}, 
+      #{picurl,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.quartz.model.StadiumsCountrys">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    insert into stadiums_countrys
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="cnName != null">
+        cn_name,
+      </if>
+      <if test="enName != null">
+        en_name,
+      </if>
+      <if test="fifa != null">
+        fifa,
+      </if>
+      <if test="ioc != null">
+        ioc,
+      </if>
+      <if test="continent != null">
+        continent,
+      </if>
+      <if test="picurl != null">
+        picUrl,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="cnName != null">
+        #{cnName,jdbcType=VARCHAR},
+      </if>
+      <if test="enName != null">
+        #{enName,jdbcType=VARCHAR},
+      </if>
+      <if test="fifa != null">
+        #{fifa,jdbcType=VARCHAR},
+      </if>
+      <if test="ioc != null">
+        #{ioc,jdbcType=VARCHAR},
+      </if>
+      <if test="continent != null">
+        #{continent,jdbcType=VARCHAR},
+      </if>
+      <if test="picurl != null">
+        #{picurl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.quartz.model.StadiumsCountrys">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    update stadiums_countrys
+    <set>
+      <if test="cnName != null">
+        cn_name = #{cnName,jdbcType=VARCHAR},
+      </if>
+      <if test="enName != null">
+        en_name = #{enName,jdbcType=VARCHAR},
+      </if>
+      <if test="fifa != null">
+        fifa = #{fifa,jdbcType=VARCHAR},
+      </if>
+      <if test="ioc != null">
+        ioc = #{ioc,jdbcType=VARCHAR},
+      </if>
+      <if test="continent != null">
+        continent = #{continent,jdbcType=VARCHAR},
+      </if>
+      <if test="picurl != null">
+        picUrl = #{picurl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.quartz.model.StadiumsCountrys">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    update stadiums_countrys
+    set cn_name = #{cnName,jdbcType=VARCHAR},
+      en_name = #{enName,jdbcType=VARCHAR},
+      fifa = #{fifa,jdbcType=VARCHAR},
+      ioc = #{ioc,jdbcType=VARCHAR},
+      continent = #{continent,jdbcType=VARCHAR},
+      picUrl = #{picurl,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

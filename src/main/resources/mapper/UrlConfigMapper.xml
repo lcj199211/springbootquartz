@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quartz.dao.UrlConfigMapper">
+  <resultMap id="BaseResultMap" type="com.quartz.model.UrlConfig">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 16:30:36.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="describe" jdbcType="VARCHAR" property="describe" />
+    <result column="url_prefix" jdbcType="VARCHAR" property="urlPrefix" />
+    <result column="url_suffix" jdbcType="VARCHAR" property="urlSuffix" />
+    <result column="usercode" jdbcType="VARCHAR" property="usercode" />
+    <result column="seckey" jdbcType="VARCHAR" property="seckey" />
+    <result column="user" jdbcType="VARCHAR" property="user" />
+    <result column="mark" jdbcType="VARCHAR" property="mark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 16:30:36.
+    -->
+    id, describe, url_prefix, url_suffix, usercode, seckey, user, mark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 16:30:36.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from url_config
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="findAllUrlConfig" resultType="com.quartz.model.UrlConfig">
+    select <include refid="Base_Column_List" /> from url_config
+  </select>
+  <select id="selectByMark" resultType="com.quartz.model.UrlConfig">
+    select
+    <include refid="Base_Column_List" />
+    from url_config
+    where mark = #{mark}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 16:30:36.
+    -->
+    delete from url_config
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.quartz.model.UrlConfig">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 16:30:36.
+    -->
+    insert into url_config (id, describe, url_prefix, 
+      url_suffix, usercode, seckey, 
+      user, mark)
+    values (#{id,jdbcType=INTEGER}, #{describe,jdbcType=VARCHAR}, #{urlPrefix,jdbcType=VARCHAR}, 
+      #{urlSuffix,jdbcType=VARCHAR}, #{usercode,jdbcType=VARCHAR}, #{seckey,jdbcType=VARCHAR}, 
+      #{user,jdbcType=VARCHAR}, #{mark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.quartz.model.UrlConfig">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 16:30:36.
+    -->
+    insert into url_config
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="describe != null">
+        describe,
+      </if>
+      <if test="urlPrefix != null">
+        url_prefix,
+      </if>
+      <if test="urlSuffix != null">
+        url_suffix,
+      </if>
+      <if test="usercode != null">
+        usercode,
+      </if>
+      <if test="seckey != null">
+        seckey,
+      </if>
+      <if test="user != null">
+        user,
+      </if>
+      <if test="mark != null">
+        mark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="describe != null">
+        #{describe,jdbcType=VARCHAR},
+      </if>
+      <if test="urlPrefix != null">
+        #{urlPrefix,jdbcType=VARCHAR},
+      </if>
+      <if test="urlSuffix != null">
+        #{urlSuffix,jdbcType=VARCHAR},
+      </if>
+      <if test="usercode != null">
+        #{usercode,jdbcType=VARCHAR},
+      </if>
+      <if test="seckey != null">
+        #{seckey,jdbcType=VARCHAR},
+      </if>
+      <if test="user != null">
+        #{user,jdbcType=VARCHAR},
+      </if>
+      <if test="mark != null">
+        #{mark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.quartz.model.UrlConfig">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 16:30:36.
+    -->
+    update url_config
+    <set>
+      <if test="describe != null">
+        describe = #{describe,jdbcType=VARCHAR},
+      </if>
+      <if test="urlPrefix != null">
+        url_prefix = #{urlPrefix,jdbcType=VARCHAR},
+      </if>
+      <if test="urlSuffix != null">
+        url_suffix = #{urlSuffix,jdbcType=VARCHAR},
+      </if>
+      <if test="usercode != null">
+        usercode = #{usercode,jdbcType=VARCHAR},
+      </if>
+      <if test="seckey != null">
+        seckey = #{seckey,jdbcType=VARCHAR},
+      </if>
+      <if test="user != null">
+        user = #{user,jdbcType=VARCHAR},
+      </if>
+      <if test="mark != null">
+        mark = #{mark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.quartz.model.UrlConfig">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 16:30:36.
+    -->
+    update url_config
+    set describe = #{describe,jdbcType=VARCHAR},
+      url_prefix = #{urlPrefix,jdbcType=VARCHAR},
+      url_suffix = #{urlSuffix,jdbcType=VARCHAR},
+      usercode = #{usercode,jdbcType=VARCHAR},
+      seckey = #{seckey,jdbcType=VARCHAR},
+      user = #{user,jdbcType=VARCHAR},
+      mark = #{mark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

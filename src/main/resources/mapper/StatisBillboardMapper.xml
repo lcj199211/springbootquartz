@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quartz.dao.StatisBillboardMapper">
+  <resultMap id="BaseResultMap" type="com.quartz.model.StatisBillboard">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="type_id" jdbcType="INTEGER" property="typeId" />
+    <result column="type_name" jdbcType="VARCHAR" property="typeName" />
+    <result column="type_cn_name" jdbcType="VARCHAR" property="typeCnName" />
+    <result column="type_en_name" jdbcType="VARCHAR" property="typeEnName" />
+    <result column="group_id" jdbcType="INTEGER" property="groupId" />
+    <result column="value" jdbcType="VARCHAR" property="value" />
+    <result column="promotion_id" jdbcType="VARCHAR" property="promotionId" />
+    <result column="promotion_cn_name" jdbcType="VARCHAR" property="promotionCnName" />
+    <result column="promotion_en_name" jdbcType="VARCHAR" property="promotionEnName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    id, type_id, type_name, type_cn_name, type_en_name, group_id, value, promotion_id, 
+    promotion_cn_name, promotion_en_name
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from statis_billboard
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    delete from statis_billboard
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.quartz.model.StatisBillboard">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    insert into statis_billboard (id, type_id, type_name, 
+      type_cn_name, type_en_name, group_id, 
+      value, promotion_id, promotion_cn_name, 
+      promotion_en_name)
+    values (#{id,jdbcType=INTEGER}, #{typeId,jdbcType=INTEGER}, #{typeName,jdbcType=VARCHAR}, 
+      #{typeCnName,jdbcType=VARCHAR}, #{typeEnName,jdbcType=VARCHAR}, #{groupId,jdbcType=INTEGER}, 
+      #{value,jdbcType=VARCHAR}, #{promotionId,jdbcType=VARCHAR}, #{promotionCnName,jdbcType=VARCHAR}, 
+      #{promotionEnName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.quartz.model.StatisBillboard">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    insert into statis_billboard
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="typeId != null">
+        type_id,
+      </if>
+      <if test="typeName != null">
+        type_name,
+      </if>
+      <if test="typeCnName != null">
+        type_cn_name,
+      </if>
+      <if test="typeEnName != null">
+        type_en_name,
+      </if>
+      <if test="groupId != null">
+        group_id,
+      </if>
+      <if test="value != null">
+        value,
+      </if>
+      <if test="promotionId != null">
+        promotion_id,
+      </if>
+      <if test="promotionCnName != null">
+        promotion_cn_name,
+      </if>
+      <if test="promotionEnName != null">
+        promotion_en_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="typeName != null">
+        #{typeName,jdbcType=VARCHAR},
+      </if>
+      <if test="typeCnName != null">
+        #{typeCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="typeEnName != null">
+        #{typeEnName,jdbcType=VARCHAR},
+      </if>
+      <if test="groupId != null">
+        #{groupId,jdbcType=INTEGER},
+      </if>
+      <if test="value != null">
+        #{value,jdbcType=VARCHAR},
+      </if>
+      <if test="promotionId != null">
+        #{promotionId,jdbcType=VARCHAR},
+      </if>
+      <if test="promotionCnName != null">
+        #{promotionCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="promotionEnName != null">
+        #{promotionEnName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.quartz.model.StatisBillboard">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    update statis_billboard
+    <set>
+      <if test="typeId != null">
+        type_id = #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="typeName != null">
+        type_name = #{typeName,jdbcType=VARCHAR},
+      </if>
+      <if test="typeCnName != null">
+        type_cn_name = #{typeCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="typeEnName != null">
+        type_en_name = #{typeEnName,jdbcType=VARCHAR},
+      </if>
+      <if test="groupId != null">
+        group_id = #{groupId,jdbcType=INTEGER},
+      </if>
+      <if test="value != null">
+        value = #{value,jdbcType=VARCHAR},
+      </if>
+      <if test="promotionId != null">
+        promotion_id = #{promotionId,jdbcType=VARCHAR},
+      </if>
+      <if test="promotionCnName != null">
+        promotion_cn_name = #{promotionCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="promotionEnName != null">
+        promotion_en_name = #{promotionEnName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.quartz.model.StatisBillboard">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    update statis_billboard
+    set type_id = #{typeId,jdbcType=INTEGER},
+      type_name = #{typeName,jdbcType=VARCHAR},
+      type_cn_name = #{typeCnName,jdbcType=VARCHAR},
+      type_en_name = #{typeEnName,jdbcType=VARCHAR},
+      group_id = #{groupId,jdbcType=INTEGER},
+      value = #{value,jdbcType=VARCHAR},
+      promotion_id = #{promotionId,jdbcType=VARCHAR},
+      promotion_cn_name = #{promotionCnName,jdbcType=VARCHAR},
+      promotion_en_name = #{promotionEnName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

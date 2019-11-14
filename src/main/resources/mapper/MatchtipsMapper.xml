@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quartz.dao.MatchtipsMapper">
+  <resultMap id="BaseResultMap" type="com.quartz.model.Matchtips">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="match_id" jdbcType="INTEGER" property="matchId" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="home_injury" jdbcType="VARCHAR" property="homeInjury" />
+    <result column="away_injury" jdbcType="VARCHAR" property="awayInjury" />
+    <result column="home_news" jdbcType="VARCHAR" property="homeNews" />
+    <result column="away_news" jdbcType="VARCHAR" property="awayNews" />
+    <result column="match_data" jdbcType="VARCHAR" property="matchData" />
+    <result column="match_forecast" jdbcType="VARCHAR" property="matchForecast" />
+    <result column="is_visible" jdbcType="INTEGER" property="isVisible" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    id, match_id, title, home_injury, away_injury, home_news, away_news, match_data, 
+    match_forecast, is_visible, update_time, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from matchtips
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    delete from matchtips
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.quartz.model.Matchtips">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    insert into matchtips (id, match_id, title, 
+      home_injury, away_injury, home_news, 
+      away_news, match_data, match_forecast, 
+      is_visible, update_time, create_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{matchId,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, 
+      #{homeInjury,jdbcType=VARCHAR}, #{awayInjury,jdbcType=VARCHAR}, #{homeNews,jdbcType=VARCHAR}, 
+      #{awayNews,jdbcType=VARCHAR}, #{matchData,jdbcType=VARCHAR}, #{matchForecast,jdbcType=VARCHAR}, 
+      #{isVisible,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.quartz.model.Matchtips">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    insert into matchtips
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="matchId != null">
+        match_id,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="homeInjury != null">
+        home_injury,
+      </if>
+      <if test="awayInjury != null">
+        away_injury,
+      </if>
+      <if test="homeNews != null">
+        home_news,
+      </if>
+      <if test="awayNews != null">
+        away_news,
+      </if>
+      <if test="matchData != null">
+        match_data,
+      </if>
+      <if test="matchForecast != null">
+        match_forecast,
+      </if>
+      <if test="isVisible != null">
+        is_visible,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="matchId != null">
+        #{matchId,jdbcType=INTEGER},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="homeInjury != null">
+        #{homeInjury,jdbcType=VARCHAR},
+      </if>
+      <if test="awayInjury != null">
+        #{awayInjury,jdbcType=VARCHAR},
+      </if>
+      <if test="homeNews != null">
+        #{homeNews,jdbcType=VARCHAR},
+      </if>
+      <if test="awayNews != null">
+        #{awayNews,jdbcType=VARCHAR},
+      </if>
+      <if test="matchData != null">
+        #{matchData,jdbcType=VARCHAR},
+      </if>
+      <if test="matchForecast != null">
+        #{matchForecast,jdbcType=VARCHAR},
+      </if>
+      <if test="isVisible != null">
+        #{isVisible,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.quartz.model.Matchtips">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    update matchtips
+    <set>
+      <if test="matchId != null">
+        match_id = #{matchId,jdbcType=INTEGER},
+      </if>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="homeInjury != null">
+        home_injury = #{homeInjury,jdbcType=VARCHAR},
+      </if>
+      <if test="awayInjury != null">
+        away_injury = #{awayInjury,jdbcType=VARCHAR},
+      </if>
+      <if test="homeNews != null">
+        home_news = #{homeNews,jdbcType=VARCHAR},
+      </if>
+      <if test="awayNews != null">
+        away_news = #{awayNews,jdbcType=VARCHAR},
+      </if>
+      <if test="matchData != null">
+        match_data = #{matchData,jdbcType=VARCHAR},
+      </if>
+      <if test="matchForecast != null">
+        match_forecast = #{matchForecast,jdbcType=VARCHAR},
+      </if>
+      <if test="isVisible != null">
+        is_visible = #{isVisible,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.quartz.model.Matchtips">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    update matchtips
+    set match_id = #{matchId,jdbcType=INTEGER},
+      title = #{title,jdbcType=VARCHAR},
+      home_injury = #{homeInjury,jdbcType=VARCHAR},
+      away_injury = #{awayInjury,jdbcType=VARCHAR},
+      home_news = #{homeNews,jdbcType=VARCHAR},
+      away_news = #{awayNews,jdbcType=VARCHAR},
+      match_data = #{matchData,jdbcType=VARCHAR},
+      match_forecast = #{matchForecast,jdbcType=VARCHAR},
+      is_visible = #{isVisible,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

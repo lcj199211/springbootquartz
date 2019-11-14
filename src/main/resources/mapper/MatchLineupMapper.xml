@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quartz.dao.MatchLineupMapper">
+  <resultMap id="BaseResultMap" type="com.quartz.model.MatchLineup">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="match_id" jdbcType="INTEGER" property="matchId" />
+    <result column="team_id" jdbcType="INTEGER" property="teamId" />
+    <result column="player_id" jdbcType="INTEGER" property="playerId" />
+    <result column="player_name" jdbcType="VARCHAR" property="playerName" />
+    <result column="position" jdbcType="VARCHAR" property="position" />
+    <result column="shirt_number" jdbcType="VARCHAR" property="shirtNumber" />
+    <result column="substitute" jdbcType="INTEGER" property="substitute" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    id, match_id, team_id, player_id, player_name, position, shirt_number, substitute
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from match_lineup
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    delete from match_lineup
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.quartz.model.MatchLineup">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    insert into match_lineup (id, match_id, team_id, 
+      player_id, player_name, position, 
+      shirt_number, substitute)
+    values (#{id,jdbcType=INTEGER}, #{matchId,jdbcType=INTEGER}, #{teamId,jdbcType=INTEGER}, 
+      #{playerId,jdbcType=INTEGER}, #{playerName,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, 
+      #{shirtNumber,jdbcType=VARCHAR}, #{substitute,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.quartz.model.MatchLineup">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    insert into match_lineup
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="matchId != null">
+        match_id,
+      </if>
+      <if test="teamId != null">
+        team_id,
+      </if>
+      <if test="playerId != null">
+        player_id,
+      </if>
+      <if test="playerName != null">
+        player_name,
+      </if>
+      <if test="position != null">
+        position,
+      </if>
+      <if test="shirtNumber != null">
+        shirt_number,
+      </if>
+      <if test="substitute != null">
+        substitute,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="matchId != null">
+        #{matchId,jdbcType=INTEGER},
+      </if>
+      <if test="teamId != null">
+        #{teamId,jdbcType=INTEGER},
+      </if>
+      <if test="playerId != null">
+        #{playerId,jdbcType=INTEGER},
+      </if>
+      <if test="playerName != null">
+        #{playerName,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="shirtNumber != null">
+        #{shirtNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="substitute != null">
+        #{substitute,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.quartz.model.MatchLineup">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    update match_lineup
+    <set>
+      <if test="matchId != null">
+        match_id = #{matchId,jdbcType=INTEGER},
+      </if>
+      <if test="teamId != null">
+        team_id = #{teamId,jdbcType=INTEGER},
+      </if>
+      <if test="playerId != null">
+        player_id = #{playerId,jdbcType=INTEGER},
+      </if>
+      <if test="playerName != null">
+        player_name = #{playerName,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        position = #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="shirtNumber != null">
+        shirt_number = #{shirtNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="substitute != null">
+        substitute = #{substitute,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.quartz.model.MatchLineup">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    update match_lineup
+    set match_id = #{matchId,jdbcType=INTEGER},
+      team_id = #{teamId,jdbcType=INTEGER},
+      player_id = #{playerId,jdbcType=INTEGER},
+      player_name = #{playerName,jdbcType=VARCHAR},
+      position = #{position,jdbcType=VARCHAR},
+      shirt_number = #{shirtNumber,jdbcType=VARCHAR},
+      substitute = #{substitute,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

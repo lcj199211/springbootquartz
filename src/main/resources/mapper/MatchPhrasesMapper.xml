@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quartz.dao.MatchPhrasesMapper">
+  <resultMap id="BaseResultMap" type="com.quartz.model.MatchPhrases">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="match_id" jdbcType="INTEGER" property="matchId" />
+    <result column="sport_id" jdbcType="INTEGER" property="sportId" />
+    <result column="team" jdbcType="INTEGER" property="team" />
+    <result column="time_played" jdbcType="TIMESTAMP" property="timePlayed" />
+    <result column="time_remain" jdbcType="TIMESTAMP" property="timeRemain" />
+    <result column="status_code" jdbcType="INTEGER" property="statusCode" />
+    <result column="status_name" jdbcType="VARCHAR" property="statusName" />
+    <result column="type_id" jdbcType="INTEGER" property="typeId" />
+    <result column="type_name" jdbcType="VARCHAR" property="typeName" />
+    <result column="phase" jdbcType="VARCHAR" property="phase" />
+    <result column="x" jdbcType="VARCHAR" property="x" />
+    <result column="y" jdbcType="VARCHAR" property="y" />
+    <result column="player_id" jdbcType="VARCHAR" property="playerId" />
+    <result column="player_id2" jdbcType="VARCHAR" property="playerId2" />
+    <result column="goal_type" jdbcType="INTEGER" property="goalType" />
+    <result column="score" jdbcType="VARCHAR" property="score" />
+    <result column="sub_score" jdbcType="VARCHAR" property="subScore" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="deleted" jdbcType="INTEGER" property="deleted" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    id, match_id, sport_id, team, time_played, time_remain, status_code, status_name, 
+    type_id, type_name, phase, x, y, player_id, player_id2, goal_type, score, sub_score, 
+    create_time, deleted
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from match_phrases
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    delete from match_phrases
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.quartz.model.MatchPhrases">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    insert into match_phrases (id, match_id, sport_id, 
+      team, time_played, time_remain, 
+      status_code, status_name, type_id, 
+      type_name, phase, x, 
+      y, player_id, player_id2, 
+      goal_type, score, sub_score, 
+      create_time, deleted)
+    values (#{id,jdbcType=INTEGER}, #{matchId,jdbcType=INTEGER}, #{sportId,jdbcType=INTEGER}, 
+      #{team,jdbcType=INTEGER}, #{timePlayed,jdbcType=TIMESTAMP}, #{timeRemain,jdbcType=TIMESTAMP}, 
+      #{statusCode,jdbcType=INTEGER}, #{statusName,jdbcType=VARCHAR}, #{typeId,jdbcType=INTEGER}, 
+      #{typeName,jdbcType=VARCHAR}, #{phase,jdbcType=VARCHAR}, #{x,jdbcType=VARCHAR}, 
+      #{y,jdbcType=VARCHAR}, #{playerId,jdbcType=VARCHAR}, #{playerId2,jdbcType=VARCHAR}, 
+      #{goalType,jdbcType=INTEGER}, #{score,jdbcType=VARCHAR}, #{subScore,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{deleted,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.quartz.model.MatchPhrases">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    insert into match_phrases
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="matchId != null">
+        match_id,
+      </if>
+      <if test="sportId != null">
+        sport_id,
+      </if>
+      <if test="team != null">
+        team,
+      </if>
+      <if test="timePlayed != null">
+        time_played,
+      </if>
+      <if test="timeRemain != null">
+        time_remain,
+      </if>
+      <if test="statusCode != null">
+        status_code,
+      </if>
+      <if test="statusName != null">
+        status_name,
+      </if>
+      <if test="typeId != null">
+        type_id,
+      </if>
+      <if test="typeName != null">
+        type_name,
+      </if>
+      <if test="phase != null">
+        phase,
+      </if>
+      <if test="x != null">
+        x,
+      </if>
+      <if test="y != null">
+        y,
+      </if>
+      <if test="playerId != null">
+        player_id,
+      </if>
+      <if test="playerId2 != null">
+        player_id2,
+      </if>
+      <if test="goalType != null">
+        goal_type,
+      </if>
+      <if test="score != null">
+        score,
+      </if>
+      <if test="subScore != null">
+        sub_score,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="deleted != null">
+        deleted,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="matchId != null">
+        #{matchId,jdbcType=INTEGER},
+      </if>
+      <if test="sportId != null">
+        #{sportId,jdbcType=INTEGER},
+      </if>
+      <if test="team != null">
+        #{team,jdbcType=INTEGER},
+      </if>
+      <if test="timePlayed != null">
+        #{timePlayed,jdbcType=TIMESTAMP},
+      </if>
+      <if test="timeRemain != null">
+        #{timeRemain,jdbcType=TIMESTAMP},
+      </if>
+      <if test="statusCode != null">
+        #{statusCode,jdbcType=INTEGER},
+      </if>
+      <if test="statusName != null">
+        #{statusName,jdbcType=VARCHAR},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="typeName != null">
+        #{typeName,jdbcType=VARCHAR},
+      </if>
+      <if test="phase != null">
+        #{phase,jdbcType=VARCHAR},
+      </if>
+      <if test="x != null">
+        #{x,jdbcType=VARCHAR},
+      </if>
+      <if test="y != null">
+        #{y,jdbcType=VARCHAR},
+      </if>
+      <if test="playerId != null">
+        #{playerId,jdbcType=VARCHAR},
+      </if>
+      <if test="playerId2 != null">
+        #{playerId2,jdbcType=VARCHAR},
+      </if>
+      <if test="goalType != null">
+        #{goalType,jdbcType=INTEGER},
+      </if>
+      <if test="score != null">
+        #{score,jdbcType=VARCHAR},
+      </if>
+      <if test="subScore != null">
+        #{subScore,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deleted != null">
+        #{deleted,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.quartz.model.MatchPhrases">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    update match_phrases
+    <set>
+      <if test="matchId != null">
+        match_id = #{matchId,jdbcType=INTEGER},
+      </if>
+      <if test="sportId != null">
+        sport_id = #{sportId,jdbcType=INTEGER},
+      </if>
+      <if test="team != null">
+        team = #{team,jdbcType=INTEGER},
+      </if>
+      <if test="timePlayed != null">
+        time_played = #{timePlayed,jdbcType=TIMESTAMP},
+      </if>
+      <if test="timeRemain != null">
+        time_remain = #{timeRemain,jdbcType=TIMESTAMP},
+      </if>
+      <if test="statusCode != null">
+        status_code = #{statusCode,jdbcType=INTEGER},
+      </if>
+      <if test="statusName != null">
+        status_name = #{statusName,jdbcType=VARCHAR},
+      </if>
+      <if test="typeId != null">
+        type_id = #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="typeName != null">
+        type_name = #{typeName,jdbcType=VARCHAR},
+      </if>
+      <if test="phase != null">
+        phase = #{phase,jdbcType=VARCHAR},
+      </if>
+      <if test="x != null">
+        x = #{x,jdbcType=VARCHAR},
+      </if>
+      <if test="y != null">
+        y = #{y,jdbcType=VARCHAR},
+      </if>
+      <if test="playerId != null">
+        player_id = #{playerId,jdbcType=VARCHAR},
+      </if>
+      <if test="playerId2 != null">
+        player_id2 = #{playerId2,jdbcType=VARCHAR},
+      </if>
+      <if test="goalType != null">
+        goal_type = #{goalType,jdbcType=INTEGER},
+      </if>
+      <if test="score != null">
+        score = #{score,jdbcType=VARCHAR},
+      </if>
+      <if test="subScore != null">
+        sub_score = #{subScore,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deleted != null">
+        deleted = #{deleted,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.quartz.model.MatchPhrases">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    update match_phrases
+    set match_id = #{matchId,jdbcType=INTEGER},
+      sport_id = #{sportId,jdbcType=INTEGER},
+      team = #{team,jdbcType=INTEGER},
+      time_played = #{timePlayed,jdbcType=TIMESTAMP},
+      time_remain = #{timeRemain,jdbcType=TIMESTAMP},
+      status_code = #{statusCode,jdbcType=INTEGER},
+      status_name = #{statusName,jdbcType=VARCHAR},
+      type_id = #{typeId,jdbcType=INTEGER},
+      type_name = #{typeName,jdbcType=VARCHAR},
+      phase = #{phase,jdbcType=VARCHAR},
+      x = #{x,jdbcType=VARCHAR},
+      y = #{y,jdbcType=VARCHAR},
+      player_id = #{playerId,jdbcType=VARCHAR},
+      player_id2 = #{playerId2,jdbcType=VARCHAR},
+      goal_type = #{goalType,jdbcType=INTEGER},
+      score = #{score,jdbcType=VARCHAR},
+      sub_score = #{subScore,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      deleted = #{deleted,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

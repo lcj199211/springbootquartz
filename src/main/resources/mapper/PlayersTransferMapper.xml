@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quartz.dao.PlayersTransferMapper">
+  <resultMap id="BaseResultMap" type="com.quartz.model.PlayersTransfer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="player_id" jdbcType="INTEGER" property="playerId" />
+    <result column="active" jdbcType="INTEGER" property="active" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="shirt" jdbcType="VARCHAR" property="shirt" />
+    <result column="start" jdbcType="TIMESTAMP" property="start" />
+    <result column="end" jdbcType="TIMESTAMP" property="end" />
+    <result column="team_id" jdbcType="INTEGER" property="teamId" />
+    <result column="team_cn_name" jdbcType="VARCHAR" property="teamCnName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    id, player_id, active, role_name, shirt, start, end, team_id, team_cn_name
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from players_transfer
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    delete from players_transfer
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.quartz.model.PlayersTransfer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    insert into players_transfer (id, player_id, active, 
+      role_name, shirt, start, 
+      end, team_id, team_cn_name
+      )
+    values (#{id,jdbcType=INTEGER}, #{playerId,jdbcType=INTEGER}, #{active,jdbcType=INTEGER}, 
+      #{roleName,jdbcType=VARCHAR}, #{shirt,jdbcType=VARCHAR}, #{start,jdbcType=TIMESTAMP}, 
+      #{end,jdbcType=TIMESTAMP}, #{teamId,jdbcType=INTEGER}, #{teamCnName,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.quartz.model.PlayersTransfer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    insert into players_transfer
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="playerId != null">
+        player_id,
+      </if>
+      <if test="active != null">
+        active,
+      </if>
+      <if test="roleName != null">
+        role_name,
+      </if>
+      <if test="shirt != null">
+        shirt,
+      </if>
+      <if test="start != null">
+        start,
+      </if>
+      <if test="end != null">
+        end,
+      </if>
+      <if test="teamId != null">
+        team_id,
+      </if>
+      <if test="teamCnName != null">
+        team_cn_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="playerId != null">
+        #{playerId,jdbcType=INTEGER},
+      </if>
+      <if test="active != null">
+        #{active,jdbcType=INTEGER},
+      </if>
+      <if test="roleName != null">
+        #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="shirt != null">
+        #{shirt,jdbcType=VARCHAR},
+      </if>
+      <if test="start != null">
+        #{start,jdbcType=TIMESTAMP},
+      </if>
+      <if test="end != null">
+        #{end,jdbcType=TIMESTAMP},
+      </if>
+      <if test="teamId != null">
+        #{teamId,jdbcType=INTEGER},
+      </if>
+      <if test="teamCnName != null">
+        #{teamCnName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.quartz.model.PlayersTransfer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    update players_transfer
+    <set>
+      <if test="playerId != null">
+        player_id = #{playerId,jdbcType=INTEGER},
+      </if>
+      <if test="active != null">
+        active = #{active,jdbcType=INTEGER},
+      </if>
+      <if test="roleName != null">
+        role_name = #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="shirt != null">
+        shirt = #{shirt,jdbcType=VARCHAR},
+      </if>
+      <if test="start != null">
+        start = #{start,jdbcType=TIMESTAMP},
+      </if>
+      <if test="end != null">
+        end = #{end,jdbcType=TIMESTAMP},
+      </if>
+      <if test="teamId != null">
+        team_id = #{teamId,jdbcType=INTEGER},
+      </if>
+      <if test="teamCnName != null">
+        team_cn_name = #{teamCnName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.quartz.model.PlayersTransfer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    update players_transfer
+    set player_id = #{playerId,jdbcType=INTEGER},
+      active = #{active,jdbcType=INTEGER},
+      role_name = #{roleName,jdbcType=VARCHAR},
+      shirt = #{shirt,jdbcType=VARCHAR},
+      start = #{start,jdbcType=TIMESTAMP},
+      end = #{end,jdbcType=TIMESTAMP},
+      team_id = #{teamId,jdbcType=INTEGER},
+      team_cn_name = #{teamCnName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

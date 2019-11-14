@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quartz.dao.MatchStatisMapper">
+  <resultMap id="BaseResultMap" type="com.quartz.model.MatchStatis">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="match_id" jdbcType="INTEGER" property="matchId" />
+    <result column="type_id" jdbcType="VARCHAR" property="typeId" />
+    <result column="type_cn_name" jdbcType="VARCHAR" property="typeCnName" />
+    <result column="type_en_name" jdbcType="VARCHAR" property="typeEnName" />
+    <result column="Team1" jdbcType="VARCHAR" property="team1" />
+    <result column="team2" jdbcType="VARCHAR" property="team2" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    id, match_id, type_id, type_cn_name, type_en_name, Team1, team2
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from match_statis
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    delete from match_statis
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.quartz.model.MatchStatis">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    insert into match_statis (id, match_id, type_id, 
+      type_cn_name, type_en_name, Team1, 
+      team2)
+    values (#{id,jdbcType=INTEGER}, #{matchId,jdbcType=INTEGER}, #{typeId,jdbcType=VARCHAR}, 
+      #{typeCnName,jdbcType=VARCHAR}, #{typeEnName,jdbcType=VARCHAR}, #{team1,jdbcType=VARCHAR}, 
+      #{team2,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.quartz.model.MatchStatis">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    insert into match_statis
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="matchId != null">
+        match_id,
+      </if>
+      <if test="typeId != null">
+        type_id,
+      </if>
+      <if test="typeCnName != null">
+        type_cn_name,
+      </if>
+      <if test="typeEnName != null">
+        type_en_name,
+      </if>
+      <if test="team1 != null">
+        Team1,
+      </if>
+      <if test="team2 != null">
+        team2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="matchId != null">
+        #{matchId,jdbcType=INTEGER},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=VARCHAR},
+      </if>
+      <if test="typeCnName != null">
+        #{typeCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="typeEnName != null">
+        #{typeEnName,jdbcType=VARCHAR},
+      </if>
+      <if test="team1 != null">
+        #{team1,jdbcType=VARCHAR},
+      </if>
+      <if test="team2 != null">
+        #{team2,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.quartz.model.MatchStatis">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    update match_statis
+    <set>
+      <if test="matchId != null">
+        match_id = #{matchId,jdbcType=INTEGER},
+      </if>
+      <if test="typeId != null">
+        type_id = #{typeId,jdbcType=VARCHAR},
+      </if>
+      <if test="typeCnName != null">
+        type_cn_name = #{typeCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="typeEnName != null">
+        type_en_name = #{typeEnName,jdbcType=VARCHAR},
+      </if>
+      <if test="team1 != null">
+        Team1 = #{team1,jdbcType=VARCHAR},
+      </if>
+      <if test="team2 != null">
+        team2 = #{team2,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.quartz.model.MatchStatis">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    update match_statis
+    set match_id = #{matchId,jdbcType=INTEGER},
+      type_id = #{typeId,jdbcType=VARCHAR},
+      type_cn_name = #{typeCnName,jdbcType=VARCHAR},
+      type_en_name = #{typeEnName,jdbcType=VARCHAR},
+      Team1 = #{team1,jdbcType=VARCHAR},
+      team2 = #{team2,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quartz.dao.RollballGameplayMapper">
+  <resultMap id="BaseResultMap" type="com.quartz.model.RollballGameplay">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="rollball_id" jdbcType="INTEGER" property="rollballId" />
+    <result column="type_id" jdbcType="INTEGER" property="typeId" />
+    <result column="type_name" jdbcType="VARCHAR" property="typeName" />
+    <result column="ovalue" jdbcType="VARCHAR" property="ovalue" />
+    <result column="canceled" jdbcType="INTEGER" property="canceled" />
+    <result column="cleared" jdbcType="INTEGER" property="cleared" />
+    <result column="actvie" jdbcType="INTEGER" property="actvie" />
+    <result column="cleared_score" jdbcType="VARCHAR" property="clearedScore" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    id, rollball_id, type_id, type_name, ovalue, canceled, cleared, actvie, cleared_score
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from rollball_gameplay
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    delete from rollball_gameplay
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.quartz.model.RollballGameplay">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    insert into rollball_gameplay (id, rollball_id, type_id, 
+      type_name, ovalue, canceled, 
+      cleared, actvie, cleared_score
+      )
+    values (#{id,jdbcType=INTEGER}, #{rollballId,jdbcType=INTEGER}, #{typeId,jdbcType=INTEGER}, 
+      #{typeName,jdbcType=VARCHAR}, #{ovalue,jdbcType=VARCHAR}, #{canceled,jdbcType=INTEGER}, 
+      #{cleared,jdbcType=INTEGER}, #{actvie,jdbcType=INTEGER}, #{clearedScore,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.quartz.model.RollballGameplay">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    insert into rollball_gameplay
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="rollballId != null">
+        rollball_id,
+      </if>
+      <if test="typeId != null">
+        type_id,
+      </if>
+      <if test="typeName != null">
+        type_name,
+      </if>
+      <if test="ovalue != null">
+        ovalue,
+      </if>
+      <if test="canceled != null">
+        canceled,
+      </if>
+      <if test="cleared != null">
+        cleared,
+      </if>
+      <if test="actvie != null">
+        actvie,
+      </if>
+      <if test="clearedScore != null">
+        cleared_score,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="rollballId != null">
+        #{rollballId,jdbcType=INTEGER},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="typeName != null">
+        #{typeName,jdbcType=VARCHAR},
+      </if>
+      <if test="ovalue != null">
+        #{ovalue,jdbcType=VARCHAR},
+      </if>
+      <if test="canceled != null">
+        #{canceled,jdbcType=INTEGER},
+      </if>
+      <if test="cleared != null">
+        #{cleared,jdbcType=INTEGER},
+      </if>
+      <if test="actvie != null">
+        #{actvie,jdbcType=INTEGER},
+      </if>
+      <if test="clearedScore != null">
+        #{clearedScore,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.quartz.model.RollballGameplay">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    update rollball_gameplay
+    <set>
+      <if test="rollballId != null">
+        rollball_id = #{rollballId,jdbcType=INTEGER},
+      </if>
+      <if test="typeId != null">
+        type_id = #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="typeName != null">
+        type_name = #{typeName,jdbcType=VARCHAR},
+      </if>
+      <if test="ovalue != null">
+        ovalue = #{ovalue,jdbcType=VARCHAR},
+      </if>
+      <if test="canceled != null">
+        canceled = #{canceled,jdbcType=INTEGER},
+      </if>
+      <if test="cleared != null">
+        cleared = #{cleared,jdbcType=INTEGER},
+      </if>
+      <if test="actvie != null">
+        actvie = #{actvie,jdbcType=INTEGER},
+      </if>
+      <if test="clearedScore != null">
+        cleared_score = #{clearedScore,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.quartz.model.RollballGameplay">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    update rollball_gameplay
+    set rollball_id = #{rollballId,jdbcType=INTEGER},
+      type_id = #{typeId,jdbcType=INTEGER},
+      type_name = #{typeName,jdbcType=VARCHAR},
+      ovalue = #{ovalue,jdbcType=VARCHAR},
+      canceled = #{canceled,jdbcType=INTEGER},
+      cleared = #{cleared,jdbcType=INTEGER},
+      actvie = #{actvie,jdbcType=INTEGER},
+      cleared_score = #{clearedScore,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

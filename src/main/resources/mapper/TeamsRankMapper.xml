@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quartz.dao.TeamsRankMapper">
+  <resultMap id="BaseResultMap" type="com.quartz.model.TeamsRank">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="rank" jdbcType="INTEGER" property="rank" />
+    <result column="rank_change" jdbcType="VARCHAR" property="rankChange" />
+    <result column="team_id" jdbcType="INTEGER" property="teamId" />
+    <result column="team_name" jdbcType="VARCHAR" property="teamName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    id, rank, rank_change, team_id, team_name
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from teams_rank
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    delete from teams_rank
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.quartz.model.TeamsRank">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    insert into teams_rank (id, rank, rank_change, 
+      team_id, team_name)
+    values (#{id,jdbcType=INTEGER}, #{rank,jdbcType=INTEGER}, #{rankChange,jdbcType=VARCHAR}, 
+      #{teamId,jdbcType=INTEGER}, #{teamName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.quartz.model.TeamsRank">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    insert into teams_rank
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="rank != null">
+        rank,
+      </if>
+      <if test="rankChange != null">
+        rank_change,
+      </if>
+      <if test="teamId != null">
+        team_id,
+      </if>
+      <if test="teamName != null">
+        team_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="rank != null">
+        #{rank,jdbcType=INTEGER},
+      </if>
+      <if test="rankChange != null">
+        #{rankChange,jdbcType=VARCHAR},
+      </if>
+      <if test="teamId != null">
+        #{teamId,jdbcType=INTEGER},
+      </if>
+      <if test="teamName != null">
+        #{teamName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.quartz.model.TeamsRank">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    update teams_rank
+    <set>
+      <if test="rank != null">
+        rank = #{rank,jdbcType=INTEGER},
+      </if>
+      <if test="rankChange != null">
+        rank_change = #{rankChange,jdbcType=VARCHAR},
+      </if>
+      <if test="teamId != null">
+        team_id = #{teamId,jdbcType=INTEGER},
+      </if>
+      <if test="teamName != null">
+        team_name = #{teamName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.quartz.model.TeamsRank">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    update teams_rank
+    set rank = #{rank,jdbcType=INTEGER},
+      rank_change = #{rankChange,jdbcType=VARCHAR},
+      team_id = #{teamId,jdbcType=INTEGER},
+      team_name = #{teamName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

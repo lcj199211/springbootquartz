@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quartz.dao.VariousGameplayOddsMapper">
+  <resultMap id="BaseResultMap" type="com.quartz.model.VariousGameplayOdds">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:08.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="various_gameplay_id" jdbcType="INTEGER" property="variousGameplayId" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="value" jdbcType="VARCHAR" property="value" />
+    <result column="value0" jdbcType="VARCHAR" property="value0" />
+    <result column="active" jdbcType="INTEGER" property="active" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:08.
+    -->
+    id, various_gameplay_id, type, value, value0, active
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:08.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from various_gameplay_odds
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:08.
+    -->
+    delete from various_gameplay_odds
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.quartz.model.VariousGameplayOdds">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:08.
+    -->
+    insert into various_gameplay_odds (id, various_gameplay_id, type, 
+      value, value0, active
+      )
+    values (#{id,jdbcType=INTEGER}, #{variousGameplayId,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, 
+      #{value,jdbcType=VARCHAR}, #{value0,jdbcType=VARCHAR}, #{active,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.quartz.model.VariousGameplayOdds">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:08.
+    -->
+    insert into various_gameplay_odds
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="variousGameplayId != null">
+        various_gameplay_id,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="value != null">
+        value,
+      </if>
+      <if test="value0 != null">
+        value0,
+      </if>
+      <if test="active != null">
+        active,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="variousGameplayId != null">
+        #{variousGameplayId,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="value != null">
+        #{value,jdbcType=VARCHAR},
+      </if>
+      <if test="value0 != null">
+        #{value0,jdbcType=VARCHAR},
+      </if>
+      <if test="active != null">
+        #{active,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.quartz.model.VariousGameplayOdds">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:08.
+    -->
+    update various_gameplay_odds
+    <set>
+      <if test="variousGameplayId != null">
+        various_gameplay_id = #{variousGameplayId,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="value != null">
+        value = #{value,jdbcType=VARCHAR},
+      </if>
+      <if test="value0 != null">
+        value0 = #{value0,jdbcType=VARCHAR},
+      </if>
+      <if test="active != null">
+        active = #{active,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.quartz.model.VariousGameplayOdds">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:08.
+    -->
+    update various_gameplay_odds
+    set various_gameplay_id = #{variousGameplayId,jdbcType=INTEGER},
+      type = #{type,jdbcType=VARCHAR},
+      value = #{value,jdbcType=VARCHAR},
+      value0 = #{value0,jdbcType=VARCHAR},
+      active = #{active,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

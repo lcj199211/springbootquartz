@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quartz.dao.TournamentListMapper">
+  <resultMap id="BaseResultMap" type="com.quartz.model.TournamentList">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="cn_alias" jdbcType="VARCHAR" property="cnAlias" />
+    <result column="cn_name" jdbcType="VARCHAR" property="cnName" />
+    <result column="current_season_id" jdbcType="INTEGER" property="currentSeasonId" />
+    <result column="en_alias" jdbcType="VARCHAR" property="enAlias" />
+    <result column="en_name" jdbcType="VARCHAR" property="enName" />
+    <result column="sport_id" jdbcType="INTEGER" property="sportId" />
+    <result column="logo_url" jdbcType="VARCHAR" property="logoUrl" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="level" jdbcType="INTEGER" property="level" />
+    <result column="period_type" jdbcType="VARCHAR" property="periodType" />
+    <result column="category_id" jdbcType="INTEGER" property="categoryId" />
+    <result column="category_cn_name" jdbcType="VARCHAR" property="categoryCnName" />
+    <result column="category_continent" jdbcType="VARCHAR" property="categoryContinent" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="color" jdbcType="VARCHAR" property="color" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    id, cn_alias, cn_name, current_season_id, en_alias, en_name, sport_id, logo_url, 
+    type, level, period_type, category_id, category_cn_name, category_continent, update_time, 
+    color, description
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from tournament_list
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    delete from tournament_list
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.quartz.model.TournamentList">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    insert into tournament_list (id, cn_alias, cn_name, 
+      current_season_id, en_alias, en_name, 
+      sport_id, logo_url, type, 
+      level, period_type, category_id, 
+      category_cn_name, category_continent, update_time, 
+      color, description)
+    values (#{id,jdbcType=INTEGER}, #{cnAlias,jdbcType=VARCHAR}, #{cnName,jdbcType=VARCHAR}, 
+      #{currentSeasonId,jdbcType=INTEGER}, #{enAlias,jdbcType=VARCHAR}, #{enName,jdbcType=VARCHAR}, 
+      #{sportId,jdbcType=INTEGER}, #{logoUrl,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}, 
+      #{level,jdbcType=INTEGER}, #{periodType,jdbcType=VARCHAR}, #{categoryId,jdbcType=INTEGER}, 
+      #{categoryCnName,jdbcType=VARCHAR}, #{categoryContinent,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{color,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.quartz.model.TournamentList">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    insert into tournament_list
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="cnAlias != null">
+        cn_alias,
+      </if>
+      <if test="cnName != null">
+        cn_name,
+      </if>
+      <if test="currentSeasonId != null">
+        current_season_id,
+      </if>
+      <if test="enAlias != null">
+        en_alias,
+      </if>
+      <if test="enName != null">
+        en_name,
+      </if>
+      <if test="sportId != null">
+        sport_id,
+      </if>
+      <if test="logoUrl != null">
+        logo_url,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="level != null">
+        level,
+      </if>
+      <if test="periodType != null">
+        period_type,
+      </if>
+      <if test="categoryId != null">
+        category_id,
+      </if>
+      <if test="categoryCnName != null">
+        category_cn_name,
+      </if>
+      <if test="categoryContinent != null">
+        category_continent,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="color != null">
+        color,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="cnAlias != null">
+        #{cnAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="cnName != null">
+        #{cnName,jdbcType=VARCHAR},
+      </if>
+      <if test="currentSeasonId != null">
+        #{currentSeasonId,jdbcType=INTEGER},
+      </if>
+      <if test="enAlias != null">
+        #{enAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="enName != null">
+        #{enName,jdbcType=VARCHAR},
+      </if>
+      <if test="sportId != null">
+        #{sportId,jdbcType=INTEGER},
+      </if>
+      <if test="logoUrl != null">
+        #{logoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="level != null">
+        #{level,jdbcType=INTEGER},
+      </if>
+      <if test="periodType != null">
+        #{periodType,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryId != null">
+        #{categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="categoryCnName != null">
+        #{categoryCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryContinent != null">
+        #{categoryContinent,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="color != null">
+        #{color,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.quartz.model.TournamentList">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    update tournament_list
+    <set>
+      <if test="cnAlias != null">
+        cn_alias = #{cnAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="cnName != null">
+        cn_name = #{cnName,jdbcType=VARCHAR},
+      </if>
+      <if test="currentSeasonId != null">
+        current_season_id = #{currentSeasonId,jdbcType=INTEGER},
+      </if>
+      <if test="enAlias != null">
+        en_alias = #{enAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="enName != null">
+        en_name = #{enName,jdbcType=VARCHAR},
+      </if>
+      <if test="sportId != null">
+        sport_id = #{sportId,jdbcType=INTEGER},
+      </if>
+      <if test="logoUrl != null">
+        logo_url = #{logoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="level != null">
+        level = #{level,jdbcType=INTEGER},
+      </if>
+      <if test="periodType != null">
+        period_type = #{periodType,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryId != null">
+        category_id = #{categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="categoryCnName != null">
+        category_cn_name = #{categoryCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryContinent != null">
+        category_continent = #{categoryContinent,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="color != null">
+        color = #{color,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.quartz.model.TournamentList">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    update tournament_list
+    set cn_alias = #{cnAlias,jdbcType=VARCHAR},
+      cn_name = #{cnName,jdbcType=VARCHAR},
+      current_season_id = #{currentSeasonId,jdbcType=INTEGER},
+      en_alias = #{enAlias,jdbcType=VARCHAR},
+      en_name = #{enName,jdbcType=VARCHAR},
+      sport_id = #{sportId,jdbcType=INTEGER},
+      logo_url = #{logoUrl,jdbcType=VARCHAR},
+      type = #{type,jdbcType=INTEGER},
+      level = #{level,jdbcType=INTEGER},
+      period_type = #{periodType,jdbcType=VARCHAR},
+      category_id = #{categoryId,jdbcType=INTEGER},
+      category_cn_name = #{categoryCnName,jdbcType=VARCHAR},
+      category_continent = #{categoryContinent,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      color = #{color,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

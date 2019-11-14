@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quartz.dao.MatchPlayerTechnicMapper">
+  <resultMap id="BaseResultMap" type="com.quartz.model.MatchPlayerTechnic">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="match_id" jdbcType="INTEGER" property="matchId" />
+    <result column="team_id" jdbcType="VARCHAR" property="teamId" />
+    <result column="player_id" jdbcType="VARCHAR" property="playerId" />
+    <result column="position" jdbcType="VARCHAR" property="position" />
+    <result column="start" jdbcType="VARCHAR" property="start" />
+    <result column="play_time" jdbcType="VARCHAR" property="playTime" />
+    <result column="field_goal_made" jdbcType="VARCHAR" property="fieldGoalMade" />
+    <result column="field_goal_attempted" jdbcType="VARCHAR" property="fieldGoalAttempted" />
+    <result column="three_point_made" jdbcType="VARCHAR" property="threePointMade" />
+    <result column="three_point_attempted" jdbcType="VARCHAR" property="threePointAttempted" />
+    <result column="free_throw_made" jdbcType="VARCHAR" property="freeThrowMade" />
+    <result column="free_throw_attempted" jdbcType="VARCHAR" property="freeThrowAttempted" />
+    <result column="point" jdbcType="VARCHAR" property="point" />
+    <result column="rebound" jdbcType="VARCHAR" property="rebound" />
+    <result column="assist" jdbcType="VARCHAR" property="assist" />
+    <result column="steal" jdbcType="VARCHAR" property="steal" />
+    <result column="turnover" jdbcType="VARCHAR" property="turnover" />
+    <result column="block" jdbcType="VARCHAR" property="block" />
+    <result column="foul" jdbcType="VARCHAR" property="foul" />
+    <result column="offensive_rebound" jdbcType="VARCHAR" property="offensiveRebound" />
+    <result column="defensive_rebound" jdbcType="VARCHAR" property="defensiveRebound" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    id, match_id, team_id, player_id, position, start, play_time, field_goal_made, field_goal_attempted, 
+    three_point_made, three_point_attempted, free_throw_made, free_throw_attempted, point, 
+    rebound, assist, steal, turnover, block, foul, offensive_rebound, defensive_rebound
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from match_player_technic
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    delete from match_player_technic
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.quartz.model.MatchPlayerTechnic">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    insert into match_player_technic (id, match_id, team_id, 
+      player_id, position, start, 
+      play_time, field_goal_made, field_goal_attempted, 
+      three_point_made, three_point_attempted, free_throw_made, 
+      free_throw_attempted, point, rebound, 
+      assist, steal, turnover, 
+      block, foul, offensive_rebound, 
+      defensive_rebound)
+    values (#{id,jdbcType=INTEGER}, #{matchId,jdbcType=INTEGER}, #{teamId,jdbcType=VARCHAR}, 
+      #{playerId,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, #{start,jdbcType=VARCHAR}, 
+      #{playTime,jdbcType=VARCHAR}, #{fieldGoalMade,jdbcType=VARCHAR}, #{fieldGoalAttempted,jdbcType=VARCHAR}, 
+      #{threePointMade,jdbcType=VARCHAR}, #{threePointAttempted,jdbcType=VARCHAR}, #{freeThrowMade,jdbcType=VARCHAR}, 
+      #{freeThrowAttempted,jdbcType=VARCHAR}, #{point,jdbcType=VARCHAR}, #{rebound,jdbcType=VARCHAR}, 
+      #{assist,jdbcType=VARCHAR}, #{steal,jdbcType=VARCHAR}, #{turnover,jdbcType=VARCHAR}, 
+      #{block,jdbcType=VARCHAR}, #{foul,jdbcType=VARCHAR}, #{offensiveRebound,jdbcType=VARCHAR}, 
+      #{defensiveRebound,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.quartz.model.MatchPlayerTechnic">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    insert into match_player_technic
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="matchId != null">
+        match_id,
+      </if>
+      <if test="teamId != null">
+        team_id,
+      </if>
+      <if test="playerId != null">
+        player_id,
+      </if>
+      <if test="position != null">
+        position,
+      </if>
+      <if test="start != null">
+        start,
+      </if>
+      <if test="playTime != null">
+        play_time,
+      </if>
+      <if test="fieldGoalMade != null">
+        field_goal_made,
+      </if>
+      <if test="fieldGoalAttempted != null">
+        field_goal_attempted,
+      </if>
+      <if test="threePointMade != null">
+        three_point_made,
+      </if>
+      <if test="threePointAttempted != null">
+        three_point_attempted,
+      </if>
+      <if test="freeThrowMade != null">
+        free_throw_made,
+      </if>
+      <if test="freeThrowAttempted != null">
+        free_throw_attempted,
+      </if>
+      <if test="point != null">
+        point,
+      </if>
+      <if test="rebound != null">
+        rebound,
+      </if>
+      <if test="assist != null">
+        assist,
+      </if>
+      <if test="steal != null">
+        steal,
+      </if>
+      <if test="turnover != null">
+        turnover,
+      </if>
+      <if test="block != null">
+        block,
+      </if>
+      <if test="foul != null">
+        foul,
+      </if>
+      <if test="offensiveRebound != null">
+        offensive_rebound,
+      </if>
+      <if test="defensiveRebound != null">
+        defensive_rebound,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="matchId != null">
+        #{matchId,jdbcType=INTEGER},
+      </if>
+      <if test="teamId != null">
+        #{teamId,jdbcType=VARCHAR},
+      </if>
+      <if test="playerId != null">
+        #{playerId,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="start != null">
+        #{start,jdbcType=VARCHAR},
+      </if>
+      <if test="playTime != null">
+        #{playTime,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldGoalMade != null">
+        #{fieldGoalMade,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldGoalAttempted != null">
+        #{fieldGoalAttempted,jdbcType=VARCHAR},
+      </if>
+      <if test="threePointMade != null">
+        #{threePointMade,jdbcType=VARCHAR},
+      </if>
+      <if test="threePointAttempted != null">
+        #{threePointAttempted,jdbcType=VARCHAR},
+      </if>
+      <if test="freeThrowMade != null">
+        #{freeThrowMade,jdbcType=VARCHAR},
+      </if>
+      <if test="freeThrowAttempted != null">
+        #{freeThrowAttempted,jdbcType=VARCHAR},
+      </if>
+      <if test="point != null">
+        #{point,jdbcType=VARCHAR},
+      </if>
+      <if test="rebound != null">
+        #{rebound,jdbcType=VARCHAR},
+      </if>
+      <if test="assist != null">
+        #{assist,jdbcType=VARCHAR},
+      </if>
+      <if test="steal != null">
+        #{steal,jdbcType=VARCHAR},
+      </if>
+      <if test="turnover != null">
+        #{turnover,jdbcType=VARCHAR},
+      </if>
+      <if test="block != null">
+        #{block,jdbcType=VARCHAR},
+      </if>
+      <if test="foul != null">
+        #{foul,jdbcType=VARCHAR},
+      </if>
+      <if test="offensiveRebound != null">
+        #{offensiveRebound,jdbcType=VARCHAR},
+      </if>
+      <if test="defensiveRebound != null">
+        #{defensiveRebound,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.quartz.model.MatchPlayerTechnic">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    update match_player_technic
+    <set>
+      <if test="matchId != null">
+        match_id = #{matchId,jdbcType=INTEGER},
+      </if>
+      <if test="teamId != null">
+        team_id = #{teamId,jdbcType=VARCHAR},
+      </if>
+      <if test="playerId != null">
+        player_id = #{playerId,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        position = #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="start != null">
+        start = #{start,jdbcType=VARCHAR},
+      </if>
+      <if test="playTime != null">
+        play_time = #{playTime,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldGoalMade != null">
+        field_goal_made = #{fieldGoalMade,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldGoalAttempted != null">
+        field_goal_attempted = #{fieldGoalAttempted,jdbcType=VARCHAR},
+      </if>
+      <if test="threePointMade != null">
+        three_point_made = #{threePointMade,jdbcType=VARCHAR},
+      </if>
+      <if test="threePointAttempted != null">
+        three_point_attempted = #{threePointAttempted,jdbcType=VARCHAR},
+      </if>
+      <if test="freeThrowMade != null">
+        free_throw_made = #{freeThrowMade,jdbcType=VARCHAR},
+      </if>
+      <if test="freeThrowAttempted != null">
+        free_throw_attempted = #{freeThrowAttempted,jdbcType=VARCHAR},
+      </if>
+      <if test="point != null">
+        point = #{point,jdbcType=VARCHAR},
+      </if>
+      <if test="rebound != null">
+        rebound = #{rebound,jdbcType=VARCHAR},
+      </if>
+      <if test="assist != null">
+        assist = #{assist,jdbcType=VARCHAR},
+      </if>
+      <if test="steal != null">
+        steal = #{steal,jdbcType=VARCHAR},
+      </if>
+      <if test="turnover != null">
+        turnover = #{turnover,jdbcType=VARCHAR},
+      </if>
+      <if test="block != null">
+        block = #{block,jdbcType=VARCHAR},
+      </if>
+      <if test="foul != null">
+        foul = #{foul,jdbcType=VARCHAR},
+      </if>
+      <if test="offensiveRebound != null">
+        offensive_rebound = #{offensiveRebound,jdbcType=VARCHAR},
+      </if>
+      <if test="defensiveRebound != null">
+        defensive_rebound = #{defensiveRebound,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.quartz.model.MatchPlayerTechnic">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    update match_player_technic
+    set match_id = #{matchId,jdbcType=INTEGER},
+      team_id = #{teamId,jdbcType=VARCHAR},
+      player_id = #{playerId,jdbcType=VARCHAR},
+      position = #{position,jdbcType=VARCHAR},
+      start = #{start,jdbcType=VARCHAR},
+      play_time = #{playTime,jdbcType=VARCHAR},
+      field_goal_made = #{fieldGoalMade,jdbcType=VARCHAR},
+      field_goal_attempted = #{fieldGoalAttempted,jdbcType=VARCHAR},
+      three_point_made = #{threePointMade,jdbcType=VARCHAR},
+      three_point_attempted = #{threePointAttempted,jdbcType=VARCHAR},
+      free_throw_made = #{freeThrowMade,jdbcType=VARCHAR},
+      free_throw_attempted = #{freeThrowAttempted,jdbcType=VARCHAR},
+      point = #{point,jdbcType=VARCHAR},
+      rebound = #{rebound,jdbcType=VARCHAR},
+      assist = #{assist,jdbcType=VARCHAR},
+      steal = #{steal,jdbcType=VARCHAR},
+      turnover = #{turnover,jdbcType=VARCHAR},
+      block = #{block,jdbcType=VARCHAR},
+      foul = #{foul,jdbcType=VARCHAR},
+      offensive_rebound = #{offensiveRebound,jdbcType=VARCHAR},
+      defensive_rebound = #{defensiveRebound,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

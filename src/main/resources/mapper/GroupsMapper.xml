@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quartz.dao.GroupsMapper">
+  <resultMap id="BaseResultMap" type="com.quartz.model.Groups">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="cn_alias" jdbcType="VARCHAR" property="cnAlias" />
+    <result column="cn_name" jdbcType="VARCHAR" property="cnName" />
+    <result column="en_alias" jdbcType="VARCHAR" property="enAlias" />
+    <result column="en_name" jdbcType="VARCHAR" property="enName" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    id, cn_alias, cn_name, en_alias, en_name, type
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from groups
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    delete from groups
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.quartz.model.Groups">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    insert into groups (id, cn_alias, cn_name, 
+      en_alias, en_name, type
+      )
+    values (#{id,jdbcType=INTEGER}, #{cnAlias,jdbcType=VARCHAR}, #{cnName,jdbcType=VARCHAR}, 
+      #{enAlias,jdbcType=VARCHAR}, #{enName,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.quartz.model.Groups">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    insert into groups
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="cnAlias != null">
+        cn_alias,
+      </if>
+      <if test="cnName != null">
+        cn_name,
+      </if>
+      <if test="enAlias != null">
+        en_alias,
+      </if>
+      <if test="enName != null">
+        en_name,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="cnAlias != null">
+        #{cnAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="cnName != null">
+        #{cnName,jdbcType=VARCHAR},
+      </if>
+      <if test="enAlias != null">
+        #{enAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="enName != null">
+        #{enName,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.quartz.model.Groups">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    update groups
+    <set>
+      <if test="cnAlias != null">
+        cn_alias = #{cnAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="cnName != null">
+        cn_name = #{cnName,jdbcType=VARCHAR},
+      </if>
+      <if test="enAlias != null">
+        en_alias = #{enAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="enName != null">
+        en_name = #{enName,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.quartz.model.Groups">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:04.
+    -->
+    update groups
+    set cn_alias = #{cnAlias,jdbcType=VARCHAR},
+      cn_name = #{cnName,jdbcType=VARCHAR},
+      en_alias = #{enAlias,jdbcType=VARCHAR},
+      en_name = #{enName,jdbcType=VARCHAR},
+      type = #{type,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

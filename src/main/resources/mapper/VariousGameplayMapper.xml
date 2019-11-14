@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quartz.dao.VariousGameplayMapper">
+  <resultMap id="BaseResultMap" type="com.quartz.model.VariousGameplay">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:08.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="match_id" jdbcType="INTEGER" property="matchId" />
+    <result column="book_id" jdbcType="INTEGER" property="bookId" />
+    <result column="book_cn_name" jdbcType="VARCHAR" property="bookCnName" />
+    <result column="book_en_name" jdbcType="VARCHAR" property="bookEnName" />
+    <result column="type_id" jdbcType="INTEGER" property="typeId" />
+    <result column="type_name" jdbcType="VARCHAR" property="typeName" />
+    <result column="ovalue" jdbcType="VARCHAR" property="ovalue" />
+    <result column="ovalue0" jdbcType="VARCHAR" property="ovalue0" />
+    <result column="active" jdbcType="INTEGER" property="active" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:08.
+    -->
+    id, match_id, book_id, book_cn_name, book_en_name, type_id, type_name, ovalue, ovalue0, 
+    active
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:08.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from various_gameplay
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:08.
+    -->
+    delete from various_gameplay
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.quartz.model.VariousGameplay">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:08.
+    -->
+    insert into various_gameplay (id, match_id, book_id, 
+      book_cn_name, book_en_name, type_id, 
+      type_name, ovalue, ovalue0, 
+      active)
+    values (#{id,jdbcType=INTEGER}, #{matchId,jdbcType=INTEGER}, #{bookId,jdbcType=INTEGER}, 
+      #{bookCnName,jdbcType=VARCHAR}, #{bookEnName,jdbcType=VARCHAR}, #{typeId,jdbcType=INTEGER}, 
+      #{typeName,jdbcType=VARCHAR}, #{ovalue,jdbcType=VARCHAR}, #{ovalue0,jdbcType=VARCHAR}, 
+      #{active,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.quartz.model.VariousGameplay">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:08.
+    -->
+    insert into various_gameplay
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="matchId != null">
+        match_id,
+      </if>
+      <if test="bookId != null">
+        book_id,
+      </if>
+      <if test="bookCnName != null">
+        book_cn_name,
+      </if>
+      <if test="bookEnName != null">
+        book_en_name,
+      </if>
+      <if test="typeId != null">
+        type_id,
+      </if>
+      <if test="typeName != null">
+        type_name,
+      </if>
+      <if test="ovalue != null">
+        ovalue,
+      </if>
+      <if test="ovalue0 != null">
+        ovalue0,
+      </if>
+      <if test="active != null">
+        active,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="matchId != null">
+        #{matchId,jdbcType=INTEGER},
+      </if>
+      <if test="bookId != null">
+        #{bookId,jdbcType=INTEGER},
+      </if>
+      <if test="bookCnName != null">
+        #{bookCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="bookEnName != null">
+        #{bookEnName,jdbcType=VARCHAR},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="typeName != null">
+        #{typeName,jdbcType=VARCHAR},
+      </if>
+      <if test="ovalue != null">
+        #{ovalue,jdbcType=VARCHAR},
+      </if>
+      <if test="ovalue0 != null">
+        #{ovalue0,jdbcType=VARCHAR},
+      </if>
+      <if test="active != null">
+        #{active,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.quartz.model.VariousGameplay">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:08.
+    -->
+    update various_gameplay
+    <set>
+      <if test="matchId != null">
+        match_id = #{matchId,jdbcType=INTEGER},
+      </if>
+      <if test="bookId != null">
+        book_id = #{bookId,jdbcType=INTEGER},
+      </if>
+      <if test="bookCnName != null">
+        book_cn_name = #{bookCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="bookEnName != null">
+        book_en_name = #{bookEnName,jdbcType=VARCHAR},
+      </if>
+      <if test="typeId != null">
+        type_id = #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="typeName != null">
+        type_name = #{typeName,jdbcType=VARCHAR},
+      </if>
+      <if test="ovalue != null">
+        ovalue = #{ovalue,jdbcType=VARCHAR},
+      </if>
+      <if test="ovalue0 != null">
+        ovalue0 = #{ovalue0,jdbcType=VARCHAR},
+      </if>
+      <if test="active != null">
+        active = #{active,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.quartz.model.VariousGameplay">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:08.
+    -->
+    update various_gameplay
+    set match_id = #{matchId,jdbcType=INTEGER},
+      book_id = #{bookId,jdbcType=INTEGER},
+      book_cn_name = #{bookCnName,jdbcType=VARCHAR},
+      book_en_name = #{bookEnName,jdbcType=VARCHAR},
+      type_id = #{typeId,jdbcType=INTEGER},
+      type_name = #{typeName,jdbcType=VARCHAR},
+      ovalue = #{ovalue,jdbcType=VARCHAR},
+      ovalue0 = #{ovalue0,jdbcType=VARCHAR},
+      active = #{active,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

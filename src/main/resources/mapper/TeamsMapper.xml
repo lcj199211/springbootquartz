@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quartz.dao.TeamsMapper">
+  <resultMap id="BaseResultMap" type="com.quartz.model.Teams">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="cn_name" jdbcType="VARCHAR" property="cnName" />
+    <result column="cn_alias" jdbcType="VARCHAR" property="cnAlias" />
+    <result column="en_name" jdbcType="VARCHAR" property="enName" />
+    <result column="en_alias" jdbcType="VARCHAR" property="enAlias" />
+    <result column="coach_id" jdbcType="INTEGER" property="coachId" />
+    <result column="coach_en_name" jdbcType="VARCHAR" property="coachEnName" />
+    <result column="coach_cn_name" jdbcType="VARCHAR" property="coachCnName" />
+    <result column="stadium_id" jdbcType="INTEGER" property="stadiumId" />
+    <result column="stadium_cn_name" jdbcType="VARCHAR" property="stadiumCnName" />
+    <result column="stadium_en_name" jdbcType="VARCHAR" property="stadiumEnName" />
+    <result column="city_id" jdbcType="INTEGER" property="cityId" />
+    <result column="city_cn_name" jdbcType="VARCHAR" property="cityCnName" />
+    <result column="city_en_name" jdbcType="VARCHAR" property="cityEnName" />
+    <result column="establish_date" jdbcType="TIMESTAMP" property="establishDate" />
+    <result column="logo_url" jdbcType="VARCHAR" property="logoUrl" />
+    <result column="logo_url2" jdbcType="VARCHAR" property="logoUrl2" />
+    <result column="is_country" jdbcType="INTEGER" property="isCountry" />
+    <result column="market_value" jdbcType="VARCHAR" property="marketValue" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    id, cn_name, cn_alias, en_name, en_alias, coach_id, coach_en_name, coach_cn_name, 
+    stadium_id, stadium_cn_name, stadium_en_name, city_id, city_cn_name, city_en_name, 
+    establish_date, logo_url, logo_url2, is_country, market_value
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from teams
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    delete from teams
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.quartz.model.Teams">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    insert into teams (id, cn_name, cn_alias, 
+      en_name, en_alias, coach_id, 
+      coach_en_name, coach_cn_name, stadium_id, 
+      stadium_cn_name, stadium_en_name, city_id, 
+      city_cn_name, city_en_name, establish_date, 
+      logo_url, logo_url2, is_country, 
+      market_value)
+    values (#{id,jdbcType=INTEGER}, #{cnName,jdbcType=VARCHAR}, #{cnAlias,jdbcType=VARCHAR}, 
+      #{enName,jdbcType=VARCHAR}, #{enAlias,jdbcType=VARCHAR}, #{coachId,jdbcType=INTEGER}, 
+      #{coachEnName,jdbcType=VARCHAR}, #{coachCnName,jdbcType=VARCHAR}, #{stadiumId,jdbcType=INTEGER}, 
+      #{stadiumCnName,jdbcType=VARCHAR}, #{stadiumEnName,jdbcType=VARCHAR}, #{cityId,jdbcType=INTEGER}, 
+      #{cityCnName,jdbcType=VARCHAR}, #{cityEnName,jdbcType=VARCHAR}, #{establishDate,jdbcType=TIMESTAMP}, 
+      #{logoUrl,jdbcType=VARCHAR}, #{logoUrl2,jdbcType=VARCHAR}, #{isCountry,jdbcType=INTEGER}, 
+      #{marketValue,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.quartz.model.Teams">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    insert into teams
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="cnName != null">
+        cn_name,
+      </if>
+      <if test="cnAlias != null">
+        cn_alias,
+      </if>
+      <if test="enName != null">
+        en_name,
+      </if>
+      <if test="enAlias != null">
+        en_alias,
+      </if>
+      <if test="coachId != null">
+        coach_id,
+      </if>
+      <if test="coachEnName != null">
+        coach_en_name,
+      </if>
+      <if test="coachCnName != null">
+        coach_cn_name,
+      </if>
+      <if test="stadiumId != null">
+        stadium_id,
+      </if>
+      <if test="stadiumCnName != null">
+        stadium_cn_name,
+      </if>
+      <if test="stadiumEnName != null">
+        stadium_en_name,
+      </if>
+      <if test="cityId != null">
+        city_id,
+      </if>
+      <if test="cityCnName != null">
+        city_cn_name,
+      </if>
+      <if test="cityEnName != null">
+        city_en_name,
+      </if>
+      <if test="establishDate != null">
+        establish_date,
+      </if>
+      <if test="logoUrl != null">
+        logo_url,
+      </if>
+      <if test="logoUrl2 != null">
+        logo_url2,
+      </if>
+      <if test="isCountry != null">
+        is_country,
+      </if>
+      <if test="marketValue != null">
+        market_value,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="cnName != null">
+        #{cnName,jdbcType=VARCHAR},
+      </if>
+      <if test="cnAlias != null">
+        #{cnAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="enName != null">
+        #{enName,jdbcType=VARCHAR},
+      </if>
+      <if test="enAlias != null">
+        #{enAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="coachId != null">
+        #{coachId,jdbcType=INTEGER},
+      </if>
+      <if test="coachEnName != null">
+        #{coachEnName,jdbcType=VARCHAR},
+      </if>
+      <if test="coachCnName != null">
+        #{coachCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="stadiumId != null">
+        #{stadiumId,jdbcType=INTEGER},
+      </if>
+      <if test="stadiumCnName != null">
+        #{stadiumCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="stadiumEnName != null">
+        #{stadiumEnName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityId != null">
+        #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="cityCnName != null">
+        #{cityCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityEnName != null">
+        #{cityEnName,jdbcType=VARCHAR},
+      </if>
+      <if test="establishDate != null">
+        #{establishDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logoUrl != null">
+        #{logoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="logoUrl2 != null">
+        #{logoUrl2,jdbcType=VARCHAR},
+      </if>
+      <if test="isCountry != null">
+        #{isCountry,jdbcType=INTEGER},
+      </if>
+      <if test="marketValue != null">
+        #{marketValue,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.quartz.model.Teams">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    update teams
+    <set>
+      <if test="cnName != null">
+        cn_name = #{cnName,jdbcType=VARCHAR},
+      </if>
+      <if test="cnAlias != null">
+        cn_alias = #{cnAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="enName != null">
+        en_name = #{enName,jdbcType=VARCHAR},
+      </if>
+      <if test="enAlias != null">
+        en_alias = #{enAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="coachId != null">
+        coach_id = #{coachId,jdbcType=INTEGER},
+      </if>
+      <if test="coachEnName != null">
+        coach_en_name = #{coachEnName,jdbcType=VARCHAR},
+      </if>
+      <if test="coachCnName != null">
+        coach_cn_name = #{coachCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="stadiumId != null">
+        stadium_id = #{stadiumId,jdbcType=INTEGER},
+      </if>
+      <if test="stadiumCnName != null">
+        stadium_cn_name = #{stadiumCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="stadiumEnName != null">
+        stadium_en_name = #{stadiumEnName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityId != null">
+        city_id = #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="cityCnName != null">
+        city_cn_name = #{cityCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityEnName != null">
+        city_en_name = #{cityEnName,jdbcType=VARCHAR},
+      </if>
+      <if test="establishDate != null">
+        establish_date = #{establishDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logoUrl != null">
+        logo_url = #{logoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="logoUrl2 != null">
+        logo_url2 = #{logoUrl2,jdbcType=VARCHAR},
+      </if>
+      <if test="isCountry != null">
+        is_country = #{isCountry,jdbcType=INTEGER},
+      </if>
+      <if test="marketValue != null">
+        market_value = #{marketValue,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.quartz.model.Teams">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:07.
+    -->
+    update teams
+    set cn_name = #{cnName,jdbcType=VARCHAR},
+      cn_alias = #{cnAlias,jdbcType=VARCHAR},
+      en_name = #{enName,jdbcType=VARCHAR},
+      en_alias = #{enAlias,jdbcType=VARCHAR},
+      coach_id = #{coachId,jdbcType=INTEGER},
+      coach_en_name = #{coachEnName,jdbcType=VARCHAR},
+      coach_cn_name = #{coachCnName,jdbcType=VARCHAR},
+      stadium_id = #{stadiumId,jdbcType=INTEGER},
+      stadium_cn_name = #{stadiumCnName,jdbcType=VARCHAR},
+      stadium_en_name = #{stadiumEnName,jdbcType=VARCHAR},
+      city_id = #{cityId,jdbcType=INTEGER},
+      city_cn_name = #{cityCnName,jdbcType=VARCHAR},
+      city_en_name = #{cityEnName,jdbcType=VARCHAR},
+      establish_date = #{establishDate,jdbcType=TIMESTAMP},
+      logo_url = #{logoUrl,jdbcType=VARCHAR},
+      logo_url2 = #{logoUrl2,jdbcType=VARCHAR},
+      is_country = #{isCountry,jdbcType=INTEGER},
+      market_value = #{marketValue,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

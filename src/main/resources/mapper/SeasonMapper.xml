@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quartz.dao.SeasonMapper">
+  <resultMap id="BaseResultMap" type="com.quartz.model.Season">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="year" jdbcType="VARCHAR" property="year" />
+    <result column="start" jdbcType="TIMESTAMP" property="start" />
+    <result column="end" jdbcType="TIMESTAMP" property="end" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    id, year, start, end
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from season
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    delete from season
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.quartz.model.Season">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    insert into season (id, year, start, 
+      end)
+    values (#{id,jdbcType=INTEGER}, #{year,jdbcType=VARCHAR}, #{start,jdbcType=TIMESTAMP}, 
+      #{end,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.quartz.model.Season">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    insert into season
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="year != null">
+        year,
+      </if>
+      <if test="start != null">
+        start,
+      </if>
+      <if test="end != null">
+        end,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="year != null">
+        #{year,jdbcType=VARCHAR},
+      </if>
+      <if test="start != null">
+        #{start,jdbcType=TIMESTAMP},
+      </if>
+      <if test="end != null">
+        #{end,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.quartz.model.Season">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    update season
+    <set>
+      <if test="year != null">
+        year = #{year,jdbcType=VARCHAR},
+      </if>
+      <if test="start != null">
+        start = #{start,jdbcType=TIMESTAMP},
+      </if>
+      <if test="end != null">
+        end = #{end,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.quartz.model.Season">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:06.
+    -->
+    update season
+    set year = #{year,jdbcType=VARCHAR},
+      start = #{start,jdbcType=TIMESTAMP},
+      end = #{end,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

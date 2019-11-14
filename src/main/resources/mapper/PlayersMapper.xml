@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quartz.dao.PlayersMapper">
+  <resultMap id="BaseResultMap" type="com.quartz.model.Players">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="team_id" jdbcType="INTEGER" property="teamId" />
+    <result column="cn_alias" jdbcType="VARCHAR" property="cnAlias" />
+    <result column="cn_name" jdbcType="VARCHAR" property="cnName" />
+    <result column="en_alias" jdbcType="VARCHAR" property="enAlias" />
+    <result column="en_name" jdbcType="VARCHAR" property="enName" />
+    <result column="nationality" jdbcType="VARCHAR" property="nationality" />
+    <result column="position" jdbcType="VARCHAR" property="position" />
+    <result column="shirt_number" jdbcType="VARCHAR" property="shirtNumber" />
+    <result column="preferred_foot" jdbcType="VARCHAR" property="preferredFoot" />
+    <result column="birthdate" jdbcType="VARCHAR" property="birthdate" />
+    <result column="height" jdbcType="VARCHAR" property="height" />
+    <result column="weight" jdbcType="VARCHAR" property="weight" />
+    <result column="pic_url" jdbcType="VARCHAR" property="picUrl" />
+    <result column="sport_id" jdbcType="INTEGER" property="sportId" />
+    <result column="marketvalue" jdbcType="VARCHAR" property="marketvalue" />
+    <result column="highschool" jdbcType="VARCHAR" property="highschool" />
+    <result column="college" jdbcType="VARCHAR" property="college" />
+    <result column="birthplace" jdbcType="VARCHAR" property="birthplace" />
+    <result column="birthstate" jdbcType="VARCHAR" property="birthstate" />
+    <result column="experience" jdbcType="VARCHAR" property="experience" />
+    <result column="draft_pick" jdbcType="VARCHAR" property="draftPick" />
+    <result column="draft_round" jdbcType="VARCHAR" property="draftRound" />
+    <result column="draft_year" jdbcType="VARCHAR" property="draftYear" />
+    <result column="draft_teamId" jdbcType="VARCHAR" property="draftTeamid" />
+    <result column="debut" jdbcType="VARCHAR" property="debut" />
+    <result column="ability1" jdbcType="VARCHAR" property="ability1" />
+    <result column="ability2" jdbcType="VARCHAR" property="ability2" />
+    <result column="ability3" jdbcType="VARCHAR" property="ability3" />
+    <result column="ability4" jdbcType="VARCHAR" property="ability4" />
+    <result column="ability5" jdbcType="VARCHAR" property="ability5" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    id, team_id, cn_alias, cn_name, en_alias, en_name, nationality, position, shirt_number, 
+    preferred_foot, birthdate, height, weight, pic_url, sport_id, marketvalue, highschool, 
+    college, birthplace, birthstate, experience, draft_pick, draft_round, draft_year, 
+    draft_teamId, debut, ability1, ability2, ability3, ability4, ability5, description
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from players
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    delete from players
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.quartz.model.Players">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    insert into players (id, team_id, cn_alias, 
+      cn_name, en_alias, en_name, 
+      nationality, position, shirt_number, 
+      preferred_foot, birthdate, height, 
+      weight, pic_url, sport_id, 
+      marketvalue, highschool, college, 
+      birthplace, birthstate, experience, 
+      draft_pick, draft_round, draft_year, 
+      draft_teamId, debut, ability1, 
+      ability2, ability3, ability4, 
+      ability5, description)
+    values (#{id,jdbcType=INTEGER}, #{teamId,jdbcType=INTEGER}, #{cnAlias,jdbcType=VARCHAR}, 
+      #{cnName,jdbcType=VARCHAR}, #{enAlias,jdbcType=VARCHAR}, #{enName,jdbcType=VARCHAR}, 
+      #{nationality,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, #{shirtNumber,jdbcType=VARCHAR}, 
+      #{preferredFoot,jdbcType=VARCHAR}, #{birthdate,jdbcType=VARCHAR}, #{height,jdbcType=VARCHAR}, 
+      #{weight,jdbcType=VARCHAR}, #{picUrl,jdbcType=VARCHAR}, #{sportId,jdbcType=INTEGER}, 
+      #{marketvalue,jdbcType=VARCHAR}, #{highschool,jdbcType=VARCHAR}, #{college,jdbcType=VARCHAR}, 
+      #{birthplace,jdbcType=VARCHAR}, #{birthstate,jdbcType=VARCHAR}, #{experience,jdbcType=VARCHAR}, 
+      #{draftPick,jdbcType=VARCHAR}, #{draftRound,jdbcType=VARCHAR}, #{draftYear,jdbcType=VARCHAR}, 
+      #{draftTeamid,jdbcType=VARCHAR}, #{debut,jdbcType=VARCHAR}, #{ability1,jdbcType=VARCHAR}, 
+      #{ability2,jdbcType=VARCHAR}, #{ability3,jdbcType=VARCHAR}, #{ability4,jdbcType=VARCHAR}, 
+      #{ability5,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.quartz.model.Players">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    insert into players
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="teamId != null">
+        team_id,
+      </if>
+      <if test="cnAlias != null">
+        cn_alias,
+      </if>
+      <if test="cnName != null">
+        cn_name,
+      </if>
+      <if test="enAlias != null">
+        en_alias,
+      </if>
+      <if test="enName != null">
+        en_name,
+      </if>
+      <if test="nationality != null">
+        nationality,
+      </if>
+      <if test="position != null">
+        position,
+      </if>
+      <if test="shirtNumber != null">
+        shirt_number,
+      </if>
+      <if test="preferredFoot != null">
+        preferred_foot,
+      </if>
+      <if test="birthdate != null">
+        birthdate,
+      </if>
+      <if test="height != null">
+        height,
+      </if>
+      <if test="weight != null">
+        weight,
+      </if>
+      <if test="picUrl != null">
+        pic_url,
+      </if>
+      <if test="sportId != null">
+        sport_id,
+      </if>
+      <if test="marketvalue != null">
+        marketvalue,
+      </if>
+      <if test="highschool != null">
+        highschool,
+      </if>
+      <if test="college != null">
+        college,
+      </if>
+      <if test="birthplace != null">
+        birthplace,
+      </if>
+      <if test="birthstate != null">
+        birthstate,
+      </if>
+      <if test="experience != null">
+        experience,
+      </if>
+      <if test="draftPick != null">
+        draft_pick,
+      </if>
+      <if test="draftRound != null">
+        draft_round,
+      </if>
+      <if test="draftYear != null">
+        draft_year,
+      </if>
+      <if test="draftTeamid != null">
+        draft_teamId,
+      </if>
+      <if test="debut != null">
+        debut,
+      </if>
+      <if test="ability1 != null">
+        ability1,
+      </if>
+      <if test="ability2 != null">
+        ability2,
+      </if>
+      <if test="ability3 != null">
+        ability3,
+      </if>
+      <if test="ability4 != null">
+        ability4,
+      </if>
+      <if test="ability5 != null">
+        ability5,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="teamId != null">
+        #{teamId,jdbcType=INTEGER},
+      </if>
+      <if test="cnAlias != null">
+        #{cnAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="cnName != null">
+        #{cnName,jdbcType=VARCHAR},
+      </if>
+      <if test="enAlias != null">
+        #{enAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="enName != null">
+        #{enName,jdbcType=VARCHAR},
+      </if>
+      <if test="nationality != null">
+        #{nationality,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="shirtNumber != null">
+        #{shirtNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="preferredFoot != null">
+        #{preferredFoot,jdbcType=VARCHAR},
+      </if>
+      <if test="birthdate != null">
+        #{birthdate,jdbcType=VARCHAR},
+      </if>
+      <if test="height != null">
+        #{height,jdbcType=VARCHAR},
+      </if>
+      <if test="weight != null">
+        #{weight,jdbcType=VARCHAR},
+      </if>
+      <if test="picUrl != null">
+        #{picUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="sportId != null">
+        #{sportId,jdbcType=INTEGER},
+      </if>
+      <if test="marketvalue != null">
+        #{marketvalue,jdbcType=VARCHAR},
+      </if>
+      <if test="highschool != null">
+        #{highschool,jdbcType=VARCHAR},
+      </if>
+      <if test="college != null">
+        #{college,jdbcType=VARCHAR},
+      </if>
+      <if test="birthplace != null">
+        #{birthplace,jdbcType=VARCHAR},
+      </if>
+      <if test="birthstate != null">
+        #{birthstate,jdbcType=VARCHAR},
+      </if>
+      <if test="experience != null">
+        #{experience,jdbcType=VARCHAR},
+      </if>
+      <if test="draftPick != null">
+        #{draftPick,jdbcType=VARCHAR},
+      </if>
+      <if test="draftRound != null">
+        #{draftRound,jdbcType=VARCHAR},
+      </if>
+      <if test="draftYear != null">
+        #{draftYear,jdbcType=VARCHAR},
+      </if>
+      <if test="draftTeamid != null">
+        #{draftTeamid,jdbcType=VARCHAR},
+      </if>
+      <if test="debut != null">
+        #{debut,jdbcType=VARCHAR},
+      </if>
+      <if test="ability1 != null">
+        #{ability1,jdbcType=VARCHAR},
+      </if>
+      <if test="ability2 != null">
+        #{ability2,jdbcType=VARCHAR},
+      </if>
+      <if test="ability3 != null">
+        #{ability3,jdbcType=VARCHAR},
+      </if>
+      <if test="ability4 != null">
+        #{ability4,jdbcType=VARCHAR},
+      </if>
+      <if test="ability5 != null">
+        #{ability5,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.quartz.model.Players">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    update players
+    <set>
+      <if test="teamId != null">
+        team_id = #{teamId,jdbcType=INTEGER},
+      </if>
+      <if test="cnAlias != null">
+        cn_alias = #{cnAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="cnName != null">
+        cn_name = #{cnName,jdbcType=VARCHAR},
+      </if>
+      <if test="enAlias != null">
+        en_alias = #{enAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="enName != null">
+        en_name = #{enName,jdbcType=VARCHAR},
+      </if>
+      <if test="nationality != null">
+        nationality = #{nationality,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        position = #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="shirtNumber != null">
+        shirt_number = #{shirtNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="preferredFoot != null">
+        preferred_foot = #{preferredFoot,jdbcType=VARCHAR},
+      </if>
+      <if test="birthdate != null">
+        birthdate = #{birthdate,jdbcType=VARCHAR},
+      </if>
+      <if test="height != null">
+        height = #{height,jdbcType=VARCHAR},
+      </if>
+      <if test="weight != null">
+        weight = #{weight,jdbcType=VARCHAR},
+      </if>
+      <if test="picUrl != null">
+        pic_url = #{picUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="sportId != null">
+        sport_id = #{sportId,jdbcType=INTEGER},
+      </if>
+      <if test="marketvalue != null">
+        marketvalue = #{marketvalue,jdbcType=VARCHAR},
+      </if>
+      <if test="highschool != null">
+        highschool = #{highschool,jdbcType=VARCHAR},
+      </if>
+      <if test="college != null">
+        college = #{college,jdbcType=VARCHAR},
+      </if>
+      <if test="birthplace != null">
+        birthplace = #{birthplace,jdbcType=VARCHAR},
+      </if>
+      <if test="birthstate != null">
+        birthstate = #{birthstate,jdbcType=VARCHAR},
+      </if>
+      <if test="experience != null">
+        experience = #{experience,jdbcType=VARCHAR},
+      </if>
+      <if test="draftPick != null">
+        draft_pick = #{draftPick,jdbcType=VARCHAR},
+      </if>
+      <if test="draftRound != null">
+        draft_round = #{draftRound,jdbcType=VARCHAR},
+      </if>
+      <if test="draftYear != null">
+        draft_year = #{draftYear,jdbcType=VARCHAR},
+      </if>
+      <if test="draftTeamid != null">
+        draft_teamId = #{draftTeamid,jdbcType=VARCHAR},
+      </if>
+      <if test="debut != null">
+        debut = #{debut,jdbcType=VARCHAR},
+      </if>
+      <if test="ability1 != null">
+        ability1 = #{ability1,jdbcType=VARCHAR},
+      </if>
+      <if test="ability2 != null">
+        ability2 = #{ability2,jdbcType=VARCHAR},
+      </if>
+      <if test="ability3 != null">
+        ability3 = #{ability3,jdbcType=VARCHAR},
+      </if>
+      <if test="ability4 != null">
+        ability4 = #{ability4,jdbcType=VARCHAR},
+      </if>
+      <if test="ability5 != null">
+        ability5 = #{ability5,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.quartz.model.Players">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    update players
+    set team_id = #{teamId,jdbcType=INTEGER},
+      cn_alias = #{cnAlias,jdbcType=VARCHAR},
+      cn_name = #{cnName,jdbcType=VARCHAR},
+      en_alias = #{enAlias,jdbcType=VARCHAR},
+      en_name = #{enName,jdbcType=VARCHAR},
+      nationality = #{nationality,jdbcType=VARCHAR},
+      position = #{position,jdbcType=VARCHAR},
+      shirt_number = #{shirtNumber,jdbcType=VARCHAR},
+      preferred_foot = #{preferredFoot,jdbcType=VARCHAR},
+      birthdate = #{birthdate,jdbcType=VARCHAR},
+      height = #{height,jdbcType=VARCHAR},
+      weight = #{weight,jdbcType=VARCHAR},
+      pic_url = #{picUrl,jdbcType=VARCHAR},
+      sport_id = #{sportId,jdbcType=INTEGER},
+      marketvalue = #{marketvalue,jdbcType=VARCHAR},
+      highschool = #{highschool,jdbcType=VARCHAR},
+      college = #{college,jdbcType=VARCHAR},
+      birthplace = #{birthplace,jdbcType=VARCHAR},
+      birthstate = #{birthstate,jdbcType=VARCHAR},
+      experience = #{experience,jdbcType=VARCHAR},
+      draft_pick = #{draftPick,jdbcType=VARCHAR},
+      draft_round = #{draftRound,jdbcType=VARCHAR},
+      draft_year = #{draftYear,jdbcType=VARCHAR},
+      draft_teamId = #{draftTeamid,jdbcType=VARCHAR},
+      debut = #{debut,jdbcType=VARCHAR},
+      ability1 = #{ability1,jdbcType=VARCHAR},
+      ability2 = #{ability2,jdbcType=VARCHAR},
+      ability3 = #{ability3,jdbcType=VARCHAR},
+      ability4 = #{ability4,jdbcType=VARCHAR},
+      ability5 = #{ability5,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

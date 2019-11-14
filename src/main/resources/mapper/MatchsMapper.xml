@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quartz.dao.MatchsMapper">
+  <resultMap id="BaseResultMap" type="com.quartz.model.Matchs">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="match_time" jdbcType="TIMESTAMP" property="matchTime" />
+    <result column="round" jdbcType="VARCHAR" property="round" />
+    <result column="round_type" jdbcType="VARCHAR" property="roundType" />
+    <result column="group_id" jdbcType="INTEGER" property="groupId" />
+    <result column="season" jdbcType="VARCHAR" property="season" />
+    <result column="season_id" jdbcType="INTEGER" property="seasonId" />
+    <result column="sport_id" jdbcType="INTEGER" property="sportId" />
+    <result column="weather" jdbcType="VARCHAR" property="weather" />
+    <result column="weather_desc" jdbcType="VARCHAR" property="weatherDesc" />
+    <result column="referee_id" jdbcType="INTEGER" property="refereeId" />
+    <result column="referee_cn_name" jdbcType="VARCHAR" property="refereeCnName" />
+    <result column="referee_en_name" jdbcType="VARCHAR" property="refereeEnName" />
+    <result column="stadium_id" jdbcType="INTEGER" property="stadiumId" />
+    <result column="stadium_cn_name" jdbcType="VARCHAR" property="stadiumCnName" />
+    <result column="stadium_en_name" jdbcType="VARCHAR" property="stadiumEnName" />
+    <result column="time_played" jdbcType="VARCHAR" property="timePlayed" />
+    <result column="time_remaining" jdbcType="VARCHAR" property="timeRemaining" />
+    <result column="time_running" jdbcType="INTEGER" property="timeRunning" />
+    <result column="time_update" jdbcType="VARCHAR" property="timeUpdate" />
+    <result column="neutral" jdbcType="INTEGER" property="neutral" />
+    <result column="away_formation" jdbcType="VARCHAR" property="awayFormation" />
+    <result column="away_team_id" jdbcType="INTEGER" property="awayTeamId" />
+    <result column="away_team_name" jdbcType="VARCHAR" property="awayTeamName" />
+    <result column="away_team_score" jdbcType="VARCHAR" property="awayTeamScore" />
+    <result column="away_team_half_time_score" jdbcType="VARCHAR" property="awayTeamHalfTimeScore" />
+    <result column="away_team_normal_time_score" jdbcType="VARCHAR" property="awayTeamNormalTimeScore" />
+    <result column="home_formation" jdbcType="VARCHAR" property="homeFormation" />
+    <result column="home_team_id" jdbcType="INTEGER" property="homeTeamId" />
+    <result column="home_team_name" jdbcType="VARCHAR" property="homeTeamName" />
+    <result column="home_team_score" jdbcType="VARCHAR" property="homeTeamScore" />
+    <result column="home_team_half_time_score" jdbcType="VARCHAR" property="homeTeamHalfTimeScore" />
+    <result column="home_team_normal_time_score" jdbcType="VARCHAR" property="homeTeamNormalTimeScore" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="status_code" jdbcType="VARCHAR" property="statusCode" />
+    <result column="status_name" jdbcType="VARCHAR" property="statusName" />
+    <result column="winner" jdbcType="INTEGER" property="winner" />
+    <result column="lmt_mode" jdbcType="INTEGER" property="lmtMode" />
+    <result column="update_timestamp" jdbcType="VARCHAR" property="updateTimestamp" />
+    <result column="distance" jdbcType="VARCHAR" property="distance" />
+    <result column="side" jdbcType="VARCHAR" property="side" />
+    <result column="game_score" jdbcType="VARCHAR" property="gameScore" />
+    <result column="is_visible" jdbcType="INTEGER" property="isVisible" />
+    <result column="aggregate_winner" jdbcType="VARCHAR" property="aggregateWinner" />
+    <result column="previous_match_id" jdbcType="INTEGER" property="previousMatchId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    id, match_time, round, round_type, group_id, season, season_id, sport_id, weather, 
+    weather_desc, referee_id, referee_cn_name, referee_en_name, stadium_id, stadium_cn_name, 
+    stadium_en_name, time_played, time_remaining, time_running, time_update, neutral, 
+    away_formation, away_team_id, away_team_name, away_team_score, away_team_half_time_score, 
+    away_team_normal_time_score, home_formation, home_team_id, home_team_name, home_team_score, 
+    home_team_half_time_score, home_team_normal_time_score, status, status_code, status_name, 
+    winner, lmt_mode, update_timestamp, distance, side, game_score, is_visible, aggregate_winner, 
+    previous_match_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from matchs
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    delete from matchs
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.quartz.model.Matchs">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    insert into matchs (id, match_time, round, 
+      round_type, group_id, season, 
+      season_id, sport_id, weather, 
+      weather_desc, referee_id, referee_cn_name, 
+      referee_en_name, stadium_id, stadium_cn_name, 
+      stadium_en_name, time_played, time_remaining, 
+      time_running, time_update, neutral, 
+      away_formation, away_team_id, away_team_name, 
+      away_team_score, away_team_half_time_score, away_team_normal_time_score, 
+      home_formation, home_team_id, home_team_name, 
+      home_team_score, home_team_half_time_score, home_team_normal_time_score, 
+      status, status_code, status_name, 
+      winner, lmt_mode, update_timestamp, 
+      distance, side, game_score, 
+      is_visible, aggregate_winner, previous_match_id
+      )
+    values (#{id,jdbcType=INTEGER}, #{matchTime,jdbcType=TIMESTAMP}, #{round,jdbcType=VARCHAR}, 
+      #{roundType,jdbcType=VARCHAR}, #{groupId,jdbcType=INTEGER}, #{season,jdbcType=VARCHAR}, 
+      #{seasonId,jdbcType=INTEGER}, #{sportId,jdbcType=INTEGER}, #{weather,jdbcType=VARCHAR}, 
+      #{weatherDesc,jdbcType=VARCHAR}, #{refereeId,jdbcType=INTEGER}, #{refereeCnName,jdbcType=VARCHAR}, 
+      #{refereeEnName,jdbcType=VARCHAR}, #{stadiumId,jdbcType=INTEGER}, #{stadiumCnName,jdbcType=VARCHAR}, 
+      #{stadiumEnName,jdbcType=VARCHAR}, #{timePlayed,jdbcType=VARCHAR}, #{timeRemaining,jdbcType=VARCHAR}, 
+      #{timeRunning,jdbcType=INTEGER}, #{timeUpdate,jdbcType=VARCHAR}, #{neutral,jdbcType=INTEGER}, 
+      #{awayFormation,jdbcType=VARCHAR}, #{awayTeamId,jdbcType=INTEGER}, #{awayTeamName,jdbcType=VARCHAR}, 
+      #{awayTeamScore,jdbcType=VARCHAR}, #{awayTeamHalfTimeScore,jdbcType=VARCHAR}, #{awayTeamNormalTimeScore,jdbcType=VARCHAR}, 
+      #{homeFormation,jdbcType=VARCHAR}, #{homeTeamId,jdbcType=INTEGER}, #{homeTeamName,jdbcType=VARCHAR}, 
+      #{homeTeamScore,jdbcType=VARCHAR}, #{homeTeamHalfTimeScore,jdbcType=VARCHAR}, #{homeTeamNormalTimeScore,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{statusCode,jdbcType=VARCHAR}, #{statusName,jdbcType=VARCHAR}, 
+      #{winner,jdbcType=INTEGER}, #{lmtMode,jdbcType=INTEGER}, #{updateTimestamp,jdbcType=VARCHAR}, 
+      #{distance,jdbcType=VARCHAR}, #{side,jdbcType=VARCHAR}, #{gameScore,jdbcType=VARCHAR}, 
+      #{isVisible,jdbcType=INTEGER}, #{aggregateWinner,jdbcType=VARCHAR}, #{previousMatchId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.quartz.model.Matchs">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    insert into matchs
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="matchTime != null">
+        match_time,
+      </if>
+      <if test="round != null">
+        round,
+      </if>
+      <if test="roundType != null">
+        round_type,
+      </if>
+      <if test="groupId != null">
+        group_id,
+      </if>
+      <if test="season != null">
+        season,
+      </if>
+      <if test="seasonId != null">
+        season_id,
+      </if>
+      <if test="sportId != null">
+        sport_id,
+      </if>
+      <if test="weather != null">
+        weather,
+      </if>
+      <if test="weatherDesc != null">
+        weather_desc,
+      </if>
+      <if test="refereeId != null">
+        referee_id,
+      </if>
+      <if test="refereeCnName != null">
+        referee_cn_name,
+      </if>
+      <if test="refereeEnName != null">
+        referee_en_name,
+      </if>
+      <if test="stadiumId != null">
+        stadium_id,
+      </if>
+      <if test="stadiumCnName != null">
+        stadium_cn_name,
+      </if>
+      <if test="stadiumEnName != null">
+        stadium_en_name,
+      </if>
+      <if test="timePlayed != null">
+        time_played,
+      </if>
+      <if test="timeRemaining != null">
+        time_remaining,
+      </if>
+      <if test="timeRunning != null">
+        time_running,
+      </if>
+      <if test="timeUpdate != null">
+        time_update,
+      </if>
+      <if test="neutral != null">
+        neutral,
+      </if>
+      <if test="awayFormation != null">
+        away_formation,
+      </if>
+      <if test="awayTeamId != null">
+        away_team_id,
+      </if>
+      <if test="awayTeamName != null">
+        away_team_name,
+      </if>
+      <if test="awayTeamScore != null">
+        away_team_score,
+      </if>
+      <if test="awayTeamHalfTimeScore != null">
+        away_team_half_time_score,
+      </if>
+      <if test="awayTeamNormalTimeScore != null">
+        away_team_normal_time_score,
+      </if>
+      <if test="homeFormation != null">
+        home_formation,
+      </if>
+      <if test="homeTeamId != null">
+        home_team_id,
+      </if>
+      <if test="homeTeamName != null">
+        home_team_name,
+      </if>
+      <if test="homeTeamScore != null">
+        home_team_score,
+      </if>
+      <if test="homeTeamHalfTimeScore != null">
+        home_team_half_time_score,
+      </if>
+      <if test="homeTeamNormalTimeScore != null">
+        home_team_normal_time_score,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="statusCode != null">
+        status_code,
+      </if>
+      <if test="statusName != null">
+        status_name,
+      </if>
+      <if test="winner != null">
+        winner,
+      </if>
+      <if test="lmtMode != null">
+        lmt_mode,
+      </if>
+      <if test="updateTimestamp != null">
+        update_timestamp,
+      </if>
+      <if test="distance != null">
+        distance,
+      </if>
+      <if test="side != null">
+        side,
+      </if>
+      <if test="gameScore != null">
+        game_score,
+      </if>
+      <if test="isVisible != null">
+        is_visible,
+      </if>
+      <if test="aggregateWinner != null">
+        aggregate_winner,
+      </if>
+      <if test="previousMatchId != null">
+        previous_match_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="matchTime != null">
+        #{matchTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="round != null">
+        #{round,jdbcType=VARCHAR},
+      </if>
+      <if test="roundType != null">
+        #{roundType,jdbcType=VARCHAR},
+      </if>
+      <if test="groupId != null">
+        #{groupId,jdbcType=INTEGER},
+      </if>
+      <if test="season != null">
+        #{season,jdbcType=VARCHAR},
+      </if>
+      <if test="seasonId != null">
+        #{seasonId,jdbcType=INTEGER},
+      </if>
+      <if test="sportId != null">
+        #{sportId,jdbcType=INTEGER},
+      </if>
+      <if test="weather != null">
+        #{weather,jdbcType=VARCHAR},
+      </if>
+      <if test="weatherDesc != null">
+        #{weatherDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="refereeId != null">
+        #{refereeId,jdbcType=INTEGER},
+      </if>
+      <if test="refereeCnName != null">
+        #{refereeCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="refereeEnName != null">
+        #{refereeEnName,jdbcType=VARCHAR},
+      </if>
+      <if test="stadiumId != null">
+        #{stadiumId,jdbcType=INTEGER},
+      </if>
+      <if test="stadiumCnName != null">
+        #{stadiumCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="stadiumEnName != null">
+        #{stadiumEnName,jdbcType=VARCHAR},
+      </if>
+      <if test="timePlayed != null">
+        #{timePlayed,jdbcType=VARCHAR},
+      </if>
+      <if test="timeRemaining != null">
+        #{timeRemaining,jdbcType=VARCHAR},
+      </if>
+      <if test="timeRunning != null">
+        #{timeRunning,jdbcType=INTEGER},
+      </if>
+      <if test="timeUpdate != null">
+        #{timeUpdate,jdbcType=VARCHAR},
+      </if>
+      <if test="neutral != null">
+        #{neutral,jdbcType=INTEGER},
+      </if>
+      <if test="awayFormation != null">
+        #{awayFormation,jdbcType=VARCHAR},
+      </if>
+      <if test="awayTeamId != null">
+        #{awayTeamId,jdbcType=INTEGER},
+      </if>
+      <if test="awayTeamName != null">
+        #{awayTeamName,jdbcType=VARCHAR},
+      </if>
+      <if test="awayTeamScore != null">
+        #{awayTeamScore,jdbcType=VARCHAR},
+      </if>
+      <if test="awayTeamHalfTimeScore != null">
+        #{awayTeamHalfTimeScore,jdbcType=VARCHAR},
+      </if>
+      <if test="awayTeamNormalTimeScore != null">
+        #{awayTeamNormalTimeScore,jdbcType=VARCHAR},
+      </if>
+      <if test="homeFormation != null">
+        #{homeFormation,jdbcType=VARCHAR},
+      </if>
+      <if test="homeTeamId != null">
+        #{homeTeamId,jdbcType=INTEGER},
+      </if>
+      <if test="homeTeamName != null">
+        #{homeTeamName,jdbcType=VARCHAR},
+      </if>
+      <if test="homeTeamScore != null">
+        #{homeTeamScore,jdbcType=VARCHAR},
+      </if>
+      <if test="homeTeamHalfTimeScore != null">
+        #{homeTeamHalfTimeScore,jdbcType=VARCHAR},
+      </if>
+      <if test="homeTeamNormalTimeScore != null">
+        #{homeTeamNormalTimeScore,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="statusCode != null">
+        #{statusCode,jdbcType=VARCHAR},
+      </if>
+      <if test="statusName != null">
+        #{statusName,jdbcType=VARCHAR},
+      </if>
+      <if test="winner != null">
+        #{winner,jdbcType=INTEGER},
+      </if>
+      <if test="lmtMode != null">
+        #{lmtMode,jdbcType=INTEGER},
+      </if>
+      <if test="updateTimestamp != null">
+        #{updateTimestamp,jdbcType=VARCHAR},
+      </if>
+      <if test="distance != null">
+        #{distance,jdbcType=VARCHAR},
+      </if>
+      <if test="side != null">
+        #{side,jdbcType=VARCHAR},
+      </if>
+      <if test="gameScore != null">
+        #{gameScore,jdbcType=VARCHAR},
+      </if>
+      <if test="isVisible != null">
+        #{isVisible,jdbcType=INTEGER},
+      </if>
+      <if test="aggregateWinner != null">
+        #{aggregateWinner,jdbcType=VARCHAR},
+      </if>
+      <if test="previousMatchId != null">
+        #{previousMatchId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.quartz.model.Matchs">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    update matchs
+    <set>
+      <if test="matchTime != null">
+        match_time = #{matchTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="round != null">
+        round = #{round,jdbcType=VARCHAR},
+      </if>
+      <if test="roundType != null">
+        round_type = #{roundType,jdbcType=VARCHAR},
+      </if>
+      <if test="groupId != null">
+        group_id = #{groupId,jdbcType=INTEGER},
+      </if>
+      <if test="season != null">
+        season = #{season,jdbcType=VARCHAR},
+      </if>
+      <if test="seasonId != null">
+        season_id = #{seasonId,jdbcType=INTEGER},
+      </if>
+      <if test="sportId != null">
+        sport_id = #{sportId,jdbcType=INTEGER},
+      </if>
+      <if test="weather != null">
+        weather = #{weather,jdbcType=VARCHAR},
+      </if>
+      <if test="weatherDesc != null">
+        weather_desc = #{weatherDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="refereeId != null">
+        referee_id = #{refereeId,jdbcType=INTEGER},
+      </if>
+      <if test="refereeCnName != null">
+        referee_cn_name = #{refereeCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="refereeEnName != null">
+        referee_en_name = #{refereeEnName,jdbcType=VARCHAR},
+      </if>
+      <if test="stadiumId != null">
+        stadium_id = #{stadiumId,jdbcType=INTEGER},
+      </if>
+      <if test="stadiumCnName != null">
+        stadium_cn_name = #{stadiumCnName,jdbcType=VARCHAR},
+      </if>
+      <if test="stadiumEnName != null">
+        stadium_en_name = #{stadiumEnName,jdbcType=VARCHAR},
+      </if>
+      <if test="timePlayed != null">
+        time_played = #{timePlayed,jdbcType=VARCHAR},
+      </if>
+      <if test="timeRemaining != null">
+        time_remaining = #{timeRemaining,jdbcType=VARCHAR},
+      </if>
+      <if test="timeRunning != null">
+        time_running = #{timeRunning,jdbcType=INTEGER},
+      </if>
+      <if test="timeUpdate != null">
+        time_update = #{timeUpdate,jdbcType=VARCHAR},
+      </if>
+      <if test="neutral != null">
+        neutral = #{neutral,jdbcType=INTEGER},
+      </if>
+      <if test="awayFormation != null">
+        away_formation = #{awayFormation,jdbcType=VARCHAR},
+      </if>
+      <if test="awayTeamId != null">
+        away_team_id = #{awayTeamId,jdbcType=INTEGER},
+      </if>
+      <if test="awayTeamName != null">
+        away_team_name = #{awayTeamName,jdbcType=VARCHAR},
+      </if>
+      <if test="awayTeamScore != null">
+        away_team_score = #{awayTeamScore,jdbcType=VARCHAR},
+      </if>
+      <if test="awayTeamHalfTimeScore != null">
+        away_team_half_time_score = #{awayTeamHalfTimeScore,jdbcType=VARCHAR},
+      </if>
+      <if test="awayTeamNormalTimeScore != null">
+        away_team_normal_time_score = #{awayTeamNormalTimeScore,jdbcType=VARCHAR},
+      </if>
+      <if test="homeFormation != null">
+        home_formation = #{homeFormation,jdbcType=VARCHAR},
+      </if>
+      <if test="homeTeamId != null">
+        home_team_id = #{homeTeamId,jdbcType=INTEGER},
+      </if>
+      <if test="homeTeamName != null">
+        home_team_name = #{homeTeamName,jdbcType=VARCHAR},
+      </if>
+      <if test="homeTeamScore != null">
+        home_team_score = #{homeTeamScore,jdbcType=VARCHAR},
+      </if>
+      <if test="homeTeamHalfTimeScore != null">
+        home_team_half_time_score = #{homeTeamHalfTimeScore,jdbcType=VARCHAR},
+      </if>
+      <if test="homeTeamNormalTimeScore != null">
+        home_team_normal_time_score = #{homeTeamNormalTimeScore,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="statusCode != null">
+        status_code = #{statusCode,jdbcType=VARCHAR},
+      </if>
+      <if test="statusName != null">
+        status_name = #{statusName,jdbcType=VARCHAR},
+      </if>
+      <if test="winner != null">
+        winner = #{winner,jdbcType=INTEGER},
+      </if>
+      <if test="lmtMode != null">
+        lmt_mode = #{lmtMode,jdbcType=INTEGER},
+      </if>
+      <if test="updateTimestamp != null">
+        update_timestamp = #{updateTimestamp,jdbcType=VARCHAR},
+      </if>
+      <if test="distance != null">
+        distance = #{distance,jdbcType=VARCHAR},
+      </if>
+      <if test="side != null">
+        side = #{side,jdbcType=VARCHAR},
+      </if>
+      <if test="gameScore != null">
+        game_score = #{gameScore,jdbcType=VARCHAR},
+      </if>
+      <if test="isVisible != null">
+        is_visible = #{isVisible,jdbcType=INTEGER},
+      </if>
+      <if test="aggregateWinner != null">
+        aggregate_winner = #{aggregateWinner,jdbcType=VARCHAR},
+      </if>
+      <if test="previousMatchId != null">
+        previous_match_id = #{previousMatchId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.quartz.model.Matchs">
+    <!--
+      WARNING - @mbggenerated
+      Generated on 2019-11-13 10:46:05.
+    -->
+    update matchs
+    set match_time = #{matchTime,jdbcType=TIMESTAMP},
+      round = #{round,jdbcType=VARCHAR},
+      round_type = #{roundType,jdbcType=VARCHAR},
+      group_id = #{groupId,jdbcType=INTEGER},
+      season = #{season,jdbcType=VARCHAR},
+      season_id = #{seasonId,jdbcType=INTEGER},
+      sport_id = #{sportId,jdbcType=INTEGER},
+      weather = #{weather,jdbcType=VARCHAR},
+      weather_desc = #{weatherDesc,jdbcType=VARCHAR},
+      referee_id = #{refereeId,jdbcType=INTEGER},
+      referee_cn_name = #{refereeCnName,jdbcType=VARCHAR},
+      referee_en_name = #{refereeEnName,jdbcType=VARCHAR},
+      stadium_id = #{stadiumId,jdbcType=INTEGER},
+      stadium_cn_name = #{stadiumCnName,jdbcType=VARCHAR},
+      stadium_en_name = #{stadiumEnName,jdbcType=VARCHAR},
+      time_played = #{timePlayed,jdbcType=VARCHAR},
+      time_remaining = #{timeRemaining,jdbcType=VARCHAR},
+      time_running = #{timeRunning,jdbcType=INTEGER},
+      time_update = #{timeUpdate,jdbcType=VARCHAR},
+      neutral = #{neutral,jdbcType=INTEGER},
+      away_formation = #{awayFormation,jdbcType=VARCHAR},
+      away_team_id = #{awayTeamId,jdbcType=INTEGER},
+      away_team_name = #{awayTeamName,jdbcType=VARCHAR},
+      away_team_score = #{awayTeamScore,jdbcType=VARCHAR},
+      away_team_half_time_score = #{awayTeamHalfTimeScore,jdbcType=VARCHAR},
+      away_team_normal_time_score = #{awayTeamNormalTimeScore,jdbcType=VARCHAR},
+      home_formation = #{homeFormation,jdbcType=VARCHAR},
+      home_team_id = #{homeTeamId,jdbcType=INTEGER},
+      home_team_name = #{homeTeamName,jdbcType=VARCHAR},
+      home_team_score = #{homeTeamScore,jdbcType=VARCHAR},
+      home_team_half_time_score = #{homeTeamHalfTimeScore,jdbcType=VARCHAR},
+      home_team_normal_time_score = #{homeTeamNormalTimeScore,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      status_code = #{statusCode,jdbcType=VARCHAR},
+      status_name = #{statusName,jdbcType=VARCHAR},
+      winner = #{winner,jdbcType=INTEGER},
+      lmt_mode = #{lmtMode,jdbcType=INTEGER},
+      update_timestamp = #{updateTimestamp,jdbcType=VARCHAR},
+      distance = #{distance,jdbcType=VARCHAR},
+      side = #{side,jdbcType=VARCHAR},
+      game_score = #{gameScore,jdbcType=VARCHAR},
+      is_visible = #{isVisible,jdbcType=INTEGER},
+      aggregate_winner = #{aggregateWinner,jdbcType=VARCHAR},
+      previous_match_id = #{previousMatchId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
